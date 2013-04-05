@@ -1,0 +1,50 @@
+<pre><font face="Lucida,Courier New"><font color="#C00000">import</font> <font color="#000000">os</font><font color="#0000C0">,</font> <font color="#000000">shutil</font><font color="#0000C0">,</font> <font color="#000000">webbrowser</font>
+<font color="#C00000">from</font> <font color="#000000">PIL</font> <font color="#C00000">import</font> <font color="#000000">Image</font>
+<font color="#C00000">import</font> <font color="#000000">PIL</font><font color="#0000C0">.</font><font color="#000000">ImageOps</font>
+
+<font color="#008000"># Get current directory
+</font><font color="#000000">currdir</font><font color="#0000C0">=</font> <font color="#000000">os</font><font color="#0000C0">.</font><font color="#000000">getcwd</font><font color="#0000C0">(</font><font color="#0000C0">)</font>
+<font color="#008000"># Get list of files in current directory
+</font><font color="#000000">allfiles</font><font color="#0000C0">=</font><font color="#000000">os</font><font color="#0000C0">.</font><font color="#000000">listdir</font><font color="#0000C0">(</font><font color="#000000">currdir</font><font color="#0000C0">)</font>
+
+<font color="#008000"># Define a query gene
+</font><font color="#000000">queryGene</font><font color="#0000C0">=</font><font color="#004080">"EXO1"</font>
+
+<font color="#008000"># Open the SGD webpage for the query gene
+</font><font color="#000000">baseURL</font><font color="#0000C0">=</font><font color="#004080">"http://www.yeastgenome.org/cgi-bin/locus.fpl?locus="</font>
+<font color="#000000">webbrowser</font><font color="#0000C0">.</font><font color="#000000">open_new_tab</font><font color="#0000C0">(</font><font color="#000000">baseURL</font><font color="#0000C0">+</font><font color="#000000">queryGene</font><font color="#0000C0">)</font>
+
+<font color="#008000"># Get the images relevant to the query gene
+</font><font color="#000000">queryfiles</font><font color="#0000C0">=</font><font color="#0000C0">[</font><font color="#0000C0">]</font>
+<font color="#C00000">for</font> <font color="#000000">x</font> <font color="#C00000">in</font> <font color="#000000">allfiles</font><font color="#0000C0">:</font>
+    <font color="#008000"># Don't add any directory names
+</font>    <font color="#C00000">if</font> <font color="#000000">queryGene</font> <font color="#C00000">in</font> <font color="#000000">x</font> <font color="#C00000">and</font> <font color="#000000">queryGene</font><font color="#0000C0">!=</font><font color="#000000">x</font><font color="#0000C0">:</font>
+        <font color="#000000">queryfiles</font><font color="#0000C0">.</font><font color="#000000">append</font><font color="#0000C0">(</font><font color="#000000">x</font><font color="#0000C0">)</font>
+<font color="#C00000">print</font> <font color="#000000">queryfiles</font>
+
+<font color="#008000"># Let's create a new directory (if it doesn't exist) and put the images in it
+</font><font color="#C00000">if</font> <font color="#000000">queryGene</font> <font color="#C00000">not</font> <font color="#C00000">in</font> <font color="#000000">allfiles</font><font color="#0000C0">:</font>
+    <font color="#000000">os</font><font color="#0000C0">.</font><font color="#000000">mkdir</font><font color="#0000C0">(</font><font color="#000000">queryGene</font><font color="#0000C0">)</font>
+<font color="#008000"># Copy the images into the correct folder
+</font><font color="#C00000">for</font> <font color="#000000">x</font> <font color="#C00000">in</font> <font color="#000000">queryfiles</font><font color="#0000C0">:</font>
+    <font color="#000000">shutil</font><font color="#0000C0">.</font><font color="#000000">copy</font><font color="#0000C0">(</font><font color="#000000">x</font><font color="#0000C0">,</font><font color="#000000">os</font><font color="#0000C0">.</font><font color="#000000">path</font><font color="#0000C0">.</font><font color="#000000">join</font><font color="#0000C0">(</font><font color="#000000">queryGene</font><font color="#0000C0">,</font><font color="#000000">x</font><font color="#0000C0">)</font><font color="#0000C0">)</font>
+
+<font color="#008000"># Open the three files
+</font><font color="#000000">im1</font><font color="#0000C0">=</font><font color="#000000">Image</font><font color="#0000C0">.</font><font color="#000000">open</font><font color="#0000C0">(</font><font color="#000000">queryfiles</font><font color="#0000C0">[</font><font color="#0080C0">0</font><font color="#0000C0">]</font><font color="#0000C0">)</font>
+<font color="#000000">im2</font><font color="#0000C0">=</font><font color="#000000">Image</font><font color="#0000C0">.</font><font color="#000000">open</font><font color="#0000C0">(</font><font color="#000000">queryfiles</font><font color="#0000C0">[</font><font color="#0080C0">1</font><font color="#0000C0">]</font><font color="#0000C0">)</font>
+<font color="#000000">im3</font><font color="#0000C0">=</font><font color="#000000">Image</font><font color="#0000C0">.</font><font color="#000000">open</font><font color="#0000C0">(</font><font color="#000000">queryfiles</font><font color="#0000C0">[</font><font color="#0080C0">2</font><font color="#0000C0">]</font><font color="#0000C0">)</font>
+<font color="#008000"># Create an empty file to paste into
+</font><font color="#000000">blank</font><font color="#0000C0">=</font><font color="#000000">Image</font><font color="#0000C0">.</font><font color="#000000">new</font><font color="#0000C0">(</font><font color="#004080">"RGB"</font><font color="#0000C0">,</font><font color="#0000C0">(</font><font color="#0080C0">126</font><font color="#0000C0">*</font><font color="#0080C0">3</font><font color="#0000C0">,</font><font color="#0080C0">126</font><font color="#0000C0">)</font><font color="#0000C0">,</font><font color="#000000">color</font><font color="#0000C0">=</font><font color="#0080C0">0</font><font color="#0000C0">)</font>
+<font color="#008000"># Paste files
+</font><font color="#000000">blank</font><font color="#0000C0">.</font><font color="#000000">paste</font><font color="#0000C0">(</font><font color="#000000">im1</font><font color="#0000C0">,</font><font color="#0000C0">(</font><font color="#0080C0">0</font><font color="#0000C0">,</font><font color="#0080C0">0</font><font color="#0000C0">)</font><font color="#0000C0">)</font>
+<font color="#000000">blank</font><font color="#0000C0">.</font><font color="#000000">paste</font><font color="#0000C0">(</font><font color="#000000">im2</font><font color="#0000C0">,</font><font color="#0000C0">(</font><font color="#0080C0">126</font><font color="#0000C0">,</font><font color="#0080C0">0</font><font color="#0000C0">)</font><font color="#0000C0">)</font>
+<font color="#000000">blank</font><font color="#0000C0">.</font><font color="#000000">paste</font><font color="#0000C0">(</font><font color="#000000">im3</font><font color="#0000C0">,</font><font color="#0000C0">(</font><font color="#0080C0">126</font><font color="#0000C0">*</font><font color="#0080C0">2</font><font color="#0000C0">,</font><font color="#0080C0">0</font><font color="#0000C0">)</font><font color="#0000C0">)</font>
+
+<font color="#008000"># Save output
+</font><font color="#000000">blank</font><font color="#0000C0">.</font><font color="#000000">save</font><font color="#0000C0">(</font><font color="#000000">queryGene</font><font color="#0000C0">+</font><font color="#004080">"ThreeTiles.jpg"</font><font color="#0000C0">)</font>
+<font color="#000000">blank</font><font color="#0000C0">=</font><font color="#000000">blank</font><font color="#0000C0">.</font><font color="#000000">transpose</font><font color="#0000C0">(</font><font color="#000000">Image</font><font color="#0000C0">.</font><font color="#000000">ROTATE_90</font><font color="#0000C0">)</font>
+<font color="#000000">blank</font><font color="#0000C0">.</font><font color="#000000">save</font><font color="#0000C0">(</font><font color="#000000">queryGene</font><font color="#0000C0">+</font><font color="#004080">"Vertical.jpg"</font><font color="#0000C0">)</font>
+<font color="#000000">blank</font><font color="#0000C0">=</font><font color="#000000">PIL</font><font color="#0000C0">.</font><font color="#000000">ImageOps</font><font color="#0000C0">.</font><font color="#000000">invert</font><font color="#0000C0">(</font><font color="#000000">blank</font><font color="#0000C0">)</font>
+<font color="#000000">blank</font><font color="#0000C0">.</font><font color="#000000">save</font><font color="#0000C0">(</font><font color="#000000">queryGene</font><font color="#0000C0">+</font><font color="#004080">"Inverted.jpg"</font><font color="#0000C0">)</font>
+<font color="#000000">blank</font><font color="#0000C0">=</font><font color="#000000">blank</font><font color="#0000C0">.</font><font color="#000000">resize</font><font color="#0000C0">(</font><font color="#0000C0">(</font><font color="#0080C0">1260</font><font color="#0000C0">,</font><font color="#0080C0">3</font><font color="#0000C0">*</font><font color="#0080C0">1260</font><font color="#0000C0">)</font><font color="#0000C0">,</font><font color="#000000">Image</font><font color="#0000C0">.</font><font color="#000000">ANTIALIAS</font><font color="#0000C0">)</font>
+<font color="#000000">blank</font><font color="#0000C0">.</font><font color="#000000">save</font><font color="#0000C0">(</font><font color="#000000">queryGene</font><font color="#0000C0">+</font><font color="#004080">"Enlarged.jpg"</font><font color="#0000C0">)</font><font color="#000000"></font></font></pre>

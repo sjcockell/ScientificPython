@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang=en> 
+<head>
+<meta charset=utf-8> 
+
+<title>Scientific Computing with Python</title>
+<meta name="desciption" content="Introducing programming, open source software, Python and R">
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+<link rel="STYLESHEET" href="CLstyle.css" type="text/css">
+</head>
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-15636473-3");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+
+<body>
+
+<h1><a href="http://www.staff.ncl.ac.uk/conor.lawless/ScientificPython/">Scientific computing with Python</a></h1>
+by <a href="http://www.staff.ncl.ac.uk/conor.lawless/">Conor Lawless</a> email: <a href="mailto:conor.lawless@ncl.ac.uk">conor.lawless@ncl.ac.uk</a>
+
+<hr></hr>
+
+<h2>Workshop Overview</h2>
+
+<p>
+These notes are for a half-day workshop introducing <a href="http://python.org">Python</a> to <a href="http://www.ncl.ac.uk/">Newcastle University</a> <a href="http://www.ncl.ac.uk/biomedicine/">Medical School</a> postgraduate research students.
+</p>
+
+<h3>Introduction & Motivation</h3>
+
+<p>Modern biological research involves a lot of data, usually stored on a computer.  Efficiently extracting the maximum amount of information from biological data is what bioinformaticians do.  Writing and executing computer code is an extremely flexible and powerful way to make good use of the computing power and fast network connections at our disposal as part of modern PCs.</p> 
+
+<p>Unfortunately, programming has not been part of many biological researchers' training.  All research scientists should have some computational tools at their disposal to help with data handling, processing and analysis.  However, solely relying on Microsoft Excel (as an example) for analysis is highly restrictive, expensive and constains the way we think about research problems.  IT software like Excel is not capable of carrying out advanced analysis and simply doesn't help with time-consuming tasks such as file formatting, image manipulation or text manipulation, which are often important parts of the research workflow.</p>
+
+<p>Many biological research scientists spend hours or days on repetitive, computer-based tasks which could easily be automated if they had a few basic programming skills.  Worse still, some easily automatable tasks are not even attempted because of the perceived amount of manual work involved.  Getting to grips with a little bit of programming will help you become more efficient at a vast range of tasks and improve your ability to do science.</p>
+
+<h3>The Python programming language</h3>
+
+<p><a href="http://python.org">Python</a> is a friendly, powerful, flexible <a href="http://en.wikipedia.org/wiki/Open_source">open-source</a> <a href="http://en.wikipedia.org/wiki/Programming_language">programming language</a> with many freely available add-ons which allow it to easily handle an incredibly diverse range of data types in a consistent manner.</p>
+
+<p><a href="http://python.org">Python</a>'s functionality overlaps with that of many other tools, including <a href="http://www.wolfram.com/products/mathematica/">Mathematica</a>, <a href="http://www.mathworks.co.uk/products/matlab/">Matlab</a>, <a href="http://cran.r-project.org/">R</a>, <a href="http://en.wikipedia.org/wiki/C%2B%2B">C++</a> and <a href="http://en.wikipedia.org/wiki/Java_%28programming_language%29">Java</a>, but <a href="http://python.org">Python</a> has some advantages over all of these.  Compared to <a href="http://www.wolfram.com/products/mathematica/">Mathematica</a> and <a href="http://www.mathworks.co.uk/products/matlab/">Matlab</a>, <a href="http://python.org">Python</a> is a true programming language which is capable of doing more than just mathematical analysis (although these tools are designed specifically for mathematical analysis, and are sometimes preferable). <a href="http://cran.r-project.org/">R</a> is similarly <a href="http://en.wikipedia.org/wiki/Open_source">open-source</a> and freely available, and although powerful and useful, it is designed specifically for statistical analysis, and is not a true programming language, and cannot peform the same range of tasks as <a href="http://python.org">Python</a>.  <a href="http://cran.r-project.org/">R</a> syntax is not as clean, simple and easy to learn as that of <a href="http://python.org">Python</a>.  <a href="http://en.wikipedia.org/wiki/C%2B%2B">C++</a> and <a href="http://en.wikipedia.org/wiki/Java_%28programming_language%29">Java</a> are more powerful programming languages capable of faster code execution, but it is much more difficult to write and debug <a href="http://en.wikipedia.org/wiki/C%2B%2B">C++</a> and <a href="http://en.wikipedia.org/wiki/Java_%28programming_language%29">Java</a> code.  <a href="http://python.org">Python</a> code is clean and simple, extremely powerful, and it is relatively difficult to make mistakes when writing it.</p>  
+
+<p>Both <a href="http://python.org">Python</a> and <a href="http://cran.r-project.org/">R</a> are distributed under <a href="http://en.wikipedia.org/wiki/Open_source">open-source</a> licenses, which is important for the dissemination of scientific results.  Open-source means that anyone, anywhere with an internet connection can access and install the tools necessary to either use or test published code.  As computer code is an increasingly important part of biological research, universal, free access massively increases the reproducibility of experimental work.  Reproducibility is a fundamental component of the scientific method.  Universal access, enabled by open-source software, also means that it's convenient for code developers (you & I), allowing us to reuse code on our personal machines, or on colleagues machines without the need for expensive licenses or specific permissions.</p>
+
+<h3>R can be a good alternative to Python</h3>
+
+<p><a href="http://cran.r-project.org/">R</a> is a programming environment designed for statistical analysis.  It shares several of <a href="http://python.org">Python</a>'s best features, in particular it is an open source programming tool.  It is specifically designed for handling spreadsheet-like numerical data and for statistical analysis, and in many ways is preferable to <a href="http://python.org">Python</a> for pure data analysis.  However, <a href="http://python.org">Python</a> syntax is cleaner, simpler and better structured, making it easier to learn.  <a href="http://python.org">Python</a> is also more flexible, adaptable and powerful (and therefore much more fun).  For these two important reasons, learning <a href="http://python.org">Python</a> is a much better way to begin programming than attempting to learn <a href="http://cran.r-project.org/">R</a>.</p>  
+
+<p>Having said that, if you do have a little previous programming experience, or, after this course if you have come to grips with some programming concepts and are interested in learning about another amazing tool, I thoroughly recommend the introductory <a href="http://cran.r-project.org/">R</a> courses run by the school of <a href="http://www.ncl.ac.uk/maths/">Maths & Stats</a> here at Newcastle:  <a href="http://www.ncl.ac.uk/maths/rcourse/">http://www.ncl.ac.uk/maths/rcourse/</a></p>
+
+<h3>Objectives</h3>
+
+<p> After completing this course on Scientific Computing with Python, you should be able to:
+
+<ul>
+<li><a href="http://www.staff.ncl.ac.uk/conor.lawless/ScientificPython/Installation/">Install</a> <a href="http://python.org">Python</a> onto your own computer.</li>
+<li><a href="http://www.staff.ncl.ac.uk/conor.lawless/ScientificPython/FirstScript/">Write</a> some simple <a href="http://python.org">Python</a> scripts</li>
+<li><a href="http://www.staff.ncl.ac.uk/conor.lawless/ScientificPython/Execution/">Execute</a> <a href="http://python.org">Python</a> scripts in a variety of ways (e.g. command-line, <a href="http://python.org">Python</a> GUI, Windows shortcuts)</li>
+<li><a href="http://www.staff.ncl.ac.uk/conor.lawless/ScientificPython/Libraries/">Find and install</a> <a href="http://python.org">Python</a> libraries which are appropriate for your particular research problem by searching online</li>
+<li><a href="http://www.staff.ncl.ac.uk/conor.lawless/ScientificPython/Structure/">Understand</a> basic programming structure (variables, types, loops, functions, logic) enough to allow you to continue to learn independently</li>
+</ul>
+
+<p>
+All of these steps will be motivated by practical (and hopefully useful) example code which you can download from this site.  By the end of the workshop you will see that it is easy to write simple code and that writing code is a powerful and flexible way to make efficient use of computers.  Feel free to contact me to ask about any specific aspects of installation, script-writing or script execution which are presented here but do not seem clear.
+</p>
+<p>
+Some further tools and resources are highlighted <a href="http://www.staff.ncl.ac.uk/conor.lawless/ScientificPython/Resources/">here</a>.
+<hr></hr>
+
+<p>
+<a href="../ScientificPython">Overview</a> &there4;
+<a href="Installation">Installation</a> &there4;
+<a href="FirstScript">First Script</a> &there4;
+<a href="Execution">Execution</a> &there4;
+<a href="Libraries">Libraries</a> &there4;
+<a href="Structure">Structure</a> &there4;
+<a href="Resources">Other Resources</a>
+</p>
+<hr></hr>
+
+<p>
+<a href="http://www.flickr.com/photos/conchur/2318555571/"><IMG SRC="http://farm4.static.flickr.com/3285/2318555571_e9d55697d4_t.jpg" /></a>
+<a href="http://www.flickr.com/photos/conchur/2318560555/"><IMG SRC="http://farm3.static.flickr.com/2176/2318560555_995dfd80a7_t.jpg" /></a>
+<a href="http://www.flickr.com/photos/conchur/2318537723/"><IMG SRC="http://farm3.static.flickr.com/2054/2318537723_b757fc5e19_t.jpg" /></a>
+<a href="http://www.flickr.com/photos/conchur/2320268089/"><IMG SRC="http://farm3.static.flickr.com/2036/2320268089_892ab791bf_t.jpg" /></a>
+<a href="http://www.flickr.com/photos/conchur/2320278987/"><IMG SRC="http://farm4.static.flickr.com/3245/2320278987_cb105a357e_t.jpg" /></a>
+</p>
+
+<h5>Last updated: April 2012</h5>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<html>
+
+<head>
+<title>Scientific Computing with Python</title>
+<meta http-equiv="Keywords" name=Keywords content="Conor Lawless, Python, Image Analysis,  Modelling, Mathematics, Mathematical, Computational">
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+<link rel="STYLESHEET" href="../CLstyle.css" type="text/css">
+</head>
+
+<h1><a href="http://www.staff.ncl.ac.uk/conor.lawless/ScientificPython/">Scientific computing with Python</a></h1>
+by <a href="http://www.staff.ncl.ac.uk/conor.lawless/">Conor Lawless</a> email: <a href="mailto:conor.lawless@ncl.ac.uk">conor.lawless@ncl.ac.uk</a>
+
+<hr></hr>
+
+<h2><a href="http://python.org">Python</a> libraries</h2>
+
+<p>
+In the last example, you might have noticed a line which began with "import".  One of the best things about Python is that many people have developed packages for it which add to its capabilities, typically by providing you with access to functions (which we will learn about in the <a href="../Structure">Structure</a> section).  Many packages are included with the default Python installation (e.g. math, random, os, sys).  Try importing math and typing "math.".  You will get a prompt listing possible function names.  To learn more, you could search online for the Python math package <a href="http://docs.python.org/library/math.html">documentation</a>, or type help(math) at the prompt in IDLE to find out more about the math package.  This syntax works for any package.  Try executing:
+
+<div class="cbox">
+<pre><font face="Lucida,Courier New"><font color="#C00000">import</font> <font color="#000000">math</font><font color="#000000"></font></font>
+<font color="#000000">math</font><font color="#0000C0">.</font><font color="#000000">cos</font><font color="#0000C0">(</font><font color="#000000">math</font><font color="#0000C0">.</font><font color="#000000">pi</font><font color="#0000C0">)</font></pre>
+</div>
+
+To avoid typing "math" all the time, we could do the following (this is called importing a library into your namespace) which loads all the functionality in the math package as if it were a core part of Python:
+</br>
+<div class="cbox">
+<pre><font color="#C00000">from</font> <font color="#000000">math</font> <font color="#C00000">import</font> <font color="#0000C0">*</font>
+<font color="#000000">cos</font><font color="#0000C0">(</font><font color="#000000">pi</font><font color="#0000C0">)</font><font color="#000000"></font></font></pre> 
+</div>
+
+</p>
+
+You should also try this out:
+
+<div class="cbox">
+<pre><font face="Lucida,Courier New"><font color="#C00000">import</font> <font color="#000000">antigravity</font><font color="#000000"></font></font></pre>
+</div>
+
+<p>
+Additional, external Python packages can be found online which can greatly extend Python's functionality.  For example, try downloading and installing these two useful packages (Note you will need to request administrator permissions on most Newcastle University machines, but these should already be installed on computers in the Dene cluster):
+
+<ul>
+<li><a href="http://www.pythonware.com/products/pil/">Python Imaging Library</a></li>
+<li><a href="http://numpy.scipy.org/">NumPy (Numerical Python)<a/></li>
+</ul>
+
+<hr></hr>
+
+<p>
+<a href="../">Overview</a> &there4;
+<a href="../Installation">Installation</a> &there4;
+<a href="../FirstScript">First Script</a> &there4;
+<a href="../Execution">Execution</a> &there4;
+<a href="../Libraries">Libraries</a> &there4;
+<a href="../Structure">Structure</a> &there4;
+<a href="../Resources">Other Resources</a>
+</p>
+<hr></hr>
+
+<p>
+<a href="http://www.flickr.com/photos/conchur/2318555571/"><IMG SRC="http://farm4.static.flickr.com/3285/2318555571_e9d55697d4_t.jpg" /></a>
+<a href="http://www.flickr.com/photos/conchur/2318560555/"><IMG SRC="http://farm3.static.flickr.com/2176/2318560555_995dfd80a7_t.jpg" /></a>
+<a href="http://www.flickr.com/photos/conchur/2318537723/"><img src="http://farm3.static.flickr.com/2054/2318537723_b757fc5e19_t.jpg" /></a>
+<a href="http://www.flickr.com/photos/conchur/2320268089/"><IMG SRC="http://farm3.static.flickr.com/2036/2320268089_892ab791bf_t.jpg" /></a>
+<a href="http://www.flickr.com/photos/conchur/2320278987/"><IMG SRC="http://farm4.static.flickr.com/3245/2320278987_cb105a357e_t.jpg" /></a>
+</p>
+
+<h5>Last updated: April 2012</h5>
+</body>
+</html>

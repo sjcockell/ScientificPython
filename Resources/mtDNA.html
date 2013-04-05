@@ -1,0 +1,46 @@
+<pre><font face="Lucida,Courier New"><font color="#008000"># string package is for analysing text</font>
+<font color="#008000"># urllib is for downloading data from the web</font>
+<font color="#C00000">import</font> <font color="#000000">string</font><font color="#0000C0">,</font> <font color="#000000">urllib</font>
+
+<font color="#008000"># Text file derived from http://www.mitomap.org/MITOMAP/HumanMitoSeq</font>
+<font color="#000000">URL</font><font color="#0000C0">=</font><font color="#004080">"http://www.staff.ncl.ac.uk/conor.lawless/ScientificPython/Resources/mtDNA.txt"</font>
+<font color="#000000">textfile</font><font color="#0000C0">=</font><font color="#000000">urllib</font><font color="#0000C0">.</font><font color="#000000">urlopen</font><font color="#0000C0">(</font><font color="#000000">URL</font><font color="#0000C0">)</font>
+<font color="#008000">#textfile=open("H:\\mtDNA.txt","r")</font>
+<font color="#000000">lines</font><font color="#0000C0">=</font><font color="#000000">textfile</font><font color="#0000C0">.</font><font color="#000000">readlines</font><font color="#0000C0">(</font><font color="#0000C0">)</font>
+<font color="#000000">textfile</font><font color="#0000C0">.</font><font color="#000000">close</font><font color="#0000C0">(</font><font color="#0000C0">)</font>
+<font color="#000000">mtDNA</font><font color="#0000C0">=</font><font color="#000000">string</font><font color="#0000C0">.</font><font color="#000000">join</font><font color="#0000C0">(</font><font color="#000000">lines</font><font color="#0000C0">,</font><font color="#000000">sep</font><font color="#0000C0">=</font><font color="#004080">""</font><font color="#0000C0">)</font>
+
+<font color="#008000"># Let's get rid of the newline caracters</font>
+<font color="#000000">mtDNA</font><font color="#0000C0">=</font><font color="#000000">string</font><font color="#0000C0">.</font><font color="#000000">replace</font><font color="#0000C0">(</font><font color="#000000">mtDNA</font><font color="#0000C0">,</font><font color="#004080">"\n"</font><font color="#0000C0">,</font><font color="#004080">""</font><font color="#0000C0">)</font>
+<font color="#008000"># Count the total number of bases</font>
+<font color="#000000">nBases</font><font color="#0000C0">=</font><font color="#000000">len</font><font color="#0000C0">(</font><font color="#000000">mtDNA</font><font color="#0000C0">)</font>
+<font color="#C00000">print</font> <font color="#004080">"Number of bases"</font><font color="#0000C0">,</font> <font color="#000000">nBases</font>
+
+<font color="#008000"># Count the number of each base in the genome</font>
+<font color="#C00000">print</font> <font color="#004080">"Guanine"</font><font color="#0000C0">,</font><font color="#000000">string</font><font color="#0000C0">.</font><font color="#000000">count</font><font color="#0000C0">(</font><font color="#000000">mtDNA</font><font color="#0000C0">,</font><font color="#004080">"G"</font><font color="#0000C0">)</font>
+<font color="#C00000">print</font> <font color="#004080">"Adenine"</font><font color="#0000C0">,</font> <font color="#000000">string</font><font color="#0000C0">.</font><font color="#000000">count</font><font color="#0000C0">(</font><font color="#000000">mtDNA</font><font color="#0000C0">,</font><font color="#004080">"A"</font><font color="#0000C0">)</font>
+<font color="#C00000">print</font> <font color="#004080">"Thymine"</font><font color="#0000C0">,</font> <font color="#000000">string</font><font color="#0000C0">.</font><font color="#000000">count</font><font color="#0000C0">(</font><font color="#000000">mtDNA</font><font color="#0000C0">,</font><font color="#004080">"T"</font><font color="#0000C0">)</font>
+<font color="#C00000">print</font> <font color="#004080">"Cytosine"</font><font color="#0000C0">,</font> <font color="#000000">string</font><font color="#0000C0">.</font><font color="#000000">count</font><font color="#0000C0">(</font><font color="#000000">mtDNA</font><font color="#0000C0">,</font><font color="#004080">"C"</font><font color="#0000C0">)</font>
+
+<font color="#008000"># Count the number of times base sequences appear</font>
+<font color="#C00000">print</font> <font color="#004080">"GATTACA"</font><font color="#0000C0">,</font> <font color="#000000">string</font><font color="#0000C0">.</font><font color="#000000">count</font><font color="#0000C0">(</font><font color="#000000">mtDNA</font><font color="#0000C0">,</font><font color="#004080">"GATTACA"</font><font color="#0000C0">)</font>
+<font color="#C00000">print</font> <font color="#004080">"CAT"</font><font color="#0000C0">,</font> <font color="#000000">string</font><font color="#0000C0">.</font><font color="#000000">count</font><font color="#0000C0">(</font><font color="#000000">mtDNA</font><font color="#0000C0">,</font><font color="#004080">"CAT"</font><font color="#0000C0">)</font>
+<font color="#C00000">print</font> <font color="#004080">"TAG"</font><font color="#0000C0">,</font> <font color="#000000">string</font><font color="#0000C0">.</font><font color="#000000">count</font><font color="#0000C0">(</font><font color="#000000">mtDNA</font><font color="#0000C0">,</font><font color="#004080">"TAG"</font><font color="#0000C0">)</font>
+
+<font color="#008000"># mtDNA is circular, so to emulate that, we join 3 copies together</font>
+<font color="#000000">bigmtDNA</font><font color="#0000C0">=</font><font color="#000000">mtDNA</font><font color="#0000C0">+</font><font color="#000000">mtDNA</font><font color="#0000C0">+</font><font color="#000000">mtDNA</font>
+
+<font color="#000000">bRange</font><font color="#0000C0">=</font><font color="#0080C0">500</font>
+<font color="#000000">query</font><font color="#0000C0">=</font><font color="#004080">"CAT"</font>
+<font color="#000000">results</font><font color="#0000C0">=</font><font color="#0000C0">[</font><font color="#0000C0">]</font>
+<font color="#008000"># At every base, we count a range of positions centred at that base</font>
+<font color="#008000"># and count the number of times the query string appears</font>
+<font color="#C00000">for</font> <font color="#000000">x</font> <font color="#C00000">in</font> <font color="#000000">xrange</font><font color="#0000C0">(</font><font color="#000000">nBases</font><font color="#0000C0">,</font><font color="#0080C0">2</font><font color="#0000C0">*</font><font color="#000000">nBases</font><font color="#0000C0">)</font><font color="#0000C0">:</font>
+    <font color="#000000">xmin</font><font color="#0000C0">=</font><font color="#000000">x</font><font color="#0000C0">-</font><font color="#000000">bRange</font>
+    <font color="#000000">xmax</font><font color="#0000C0">=</font><font color="#000000">x</font><font color="#0000C0">+</font><font color="#000000">bRange</font>
+    <font color="#000000">results</font><font color="#0000C0">.</font><font color="#000000">append</font><font color="#0000C0">(</font><font color="#000000">string</font><font color="#0000C0">.</font><font color="#000000">count</font><font color="#0000C0">(</font><font color="#000000">bigmtDNA</font><font color="#0000C0">[</font><font color="#000000">xmin</font><font color="#0000C0">:</font><font color="#000000">xmax</font><font color="#0000C0">]</font><font color="#0000C0">,</font><font color="#000000">query</font><font color="#0000C0">)</font><font color="#0000C0">)</font>
+
+<font color="#008000"># Generate a report about the frequency of occurance of the query string</font>
+<font color="#C00000">print</font> <font color="#004080">"Lowest frequency"</font><font color="#0000C0">,</font> <font color="#000000">float</font><font color="#0000C0">(</font><font color="#000000">min</font><font color="#0000C0">(</font><font color="#000000">results</font><font color="#0000C0">)</font><font color="#0000C0">)</font><font color="#0000C0">/</font><font color="#0000C0">(</font><font color="#0080C0">1</font><font color="#0000C0">+</font><font color="#0080C0">2</font><font color="#0000C0">*</font><font color="#000000">bRange</font><font color="#0000C0">)</font>
+<font color="#C00000">print</font> <font color="#004080">"Highest frequency"</font><font color="#0000C0">,</font> <font color="#000000">float</font><font color="#0000C0">(</font><font color="#000000">max</font><font color="#0000C0">(</font><font color="#000000">results</font><font color="#0000C0">)</font><font color="#0000C0">)</font><font color="#0000C0">/</font><font color="#0000C0">(</font><font color="#0080C0">1</font><font color="#0000C0">+</font><font color="#0080C0">2</font><font color="#0000C0">*</font><font color="#000000">bRange</font><font color="#0000C0">)</font>
+<font color="#C00000">print</font> <font color="#004080">"Average overall frequency"</font><font color="#0000C0">,</font> <font color="#000000">float</font><font color="#0000C0">(</font><font color="#000000">string</font><font color="#0000C0">.</font><font color="#000000">count</font><font color="#0000C0">(</font><font color="#000000">mtDNA</font><font color="#0000C0">,</font><font color="#000000">query</font><font color="#0000C0">)</font><font color="#0000C0">)</font><font color="#0000C0">/</font><font color="#000000">nBases</font><font color="#000000"></font></font></pre>

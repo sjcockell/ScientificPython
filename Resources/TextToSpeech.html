@@ -1,0 +1,16 @@
+<pre><font face="Lucida,Courier New"><font color="#008000"># Import the relevant library</font>
+<font color="#C00000">import</font> <font color="#000000">win32com</font><font color="#0000C0">.</font><font color="#000000">client</font>
+<font color="#008000"># Set up a function from the library, which we will use as a voice</font>
+<font color="#000000">speaker</font> <font color="#0000C0">=</font> <font color="#000000">win32com</font><font color="#0000C0">.</font><font color="#000000">client</font><font color="#0000C0">.</font><font color="#000000">Dispatch</font><font color="#0000C0">(</font><font color="#004080">"SAPI.SpVoice"</font><font color="#0000C0">)</font>
+<font color="#008000"># Define a piece of text we want read</font>
+<font color="#000000">websiteText</font> <font color="#0000C0">=</font> <font color="#004080">"""
+Biological research involves lots of data, typically stored on a computer.
+Extracting the maximum amount of information from biological data is a task for bioinformaticians.
+However, all biological researchers should have some computational tools at their disposal to help with data handling, processing and analysis.
+Solely relying on Microsoft Excel for analysis is highly restrictive and expensive, and simply doesn't help with time-consuming tasks such as file formatting,
+image manipulation or text manipulation.
+"""</font>
+<font color="#008000"># Print the text to screen</font>
+<font color="#C00000">print</font><font color="#0000C0">(</font><font color="#000000">websiteText</font><font color="#0000C0">)</font>
+<font color="#008000"># Read the text aloud</font>
+<font color="#000000">speaker</font><font color="#0000C0">.</font><font color="#000000">Speak</font><font color="#0000C0">(</font><font color="#000000">websiteText</font><font color="#0000C0">)</font><font color="#000000"></font></font></pre>

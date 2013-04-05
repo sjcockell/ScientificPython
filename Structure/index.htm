@@ -1,0 +1,231 @@
+<html>
+
+<head>
+<title>Scientific Computing with Python</title>
+<meta http-equiv="Keywords" name=Keywords content="Conor Lawless, Python, Image Analysis,  Modelling, Mathematics, Mathematical, Computational">
+<link rel="STYLESHEET" href="../CLstyle.css" type="text/css">
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+</head>
+
+<h1><a href="http://www.staff.ncl.ac.uk/conor.lawless/ScientificPython/">Scientific computing with Python</a></h1>
+by <a href="http://www.staff.ncl.ac.uk/conor.lawless/">Conor Lawless</a> email: <a href="mailto:conor.lawless@ncl.ac.uk">conor.lawless@ncl.ac.uk</a>
+<hr></hr>
+
+<h2>Structure - Beginning to program in <a href="http://python.org">Python</a></h2>
+
+<p>
+I am just going to explain quickly the basics here, necessary for writing a few simple scripts.  There are many more programming tricks and concepts you could learn about.  I hope you'll be interested enough to find out about these from other tutorials or books (for example, those found in the <a href="http://www.staff.ncl.ac.uk/conor.lawless/ScientificPython/Resources/">Resources</a> section of this site).  The topics covered below are definitely not exhaustive, but I hope they are enough to give you a feel for how programming and Python works, and enough background to write a few simple scripts.
+</p>
+
+<p>
+Read the comments below, and copy the code into your IDLE GUI line by line, trying to understand what calculations are going on at each step.</p>
+
+<div class="cbox">
+<pre><font face="Lucida,Courier New"><font color="#008000"># Text like this, beginning with "#" is a comment.</font>
+<font color="#008000"># Comments are for humans to read and computers to ignore.</font>
+
+<font color="#008000"># CALCULATOR</font>
+<font color="#008000"># Python works as a calculator</font>
+<font color="#C00000">print</font> <font color="#0080C0">2</font><font color="#0000C0">+</font><font color="#0080C0">2</font>
+<font color="#C00000">print</font> <font color="#0000C0">(</font><font color="#0080C0">2</font><font color="#0000C0">+</font><font color="#0080C0">2</font><font color="#0000C0">)</font><font color="#0000C0">*</font><font color="#0080C0">5</font>
+<font color="#C00000">print</font> <font color="#0000C0">(</font><font color="#0000C0">(</font><font color="#0080C0">12</font><font color="#0000C0">+</font><font color="#0080C0">12</font><font color="#0000C0">)</font><font color="#0000C0">/</font><font color="#0080C0">6</font><font color="#0000C0">)</font><font color="#0000C0">**</font><font color="#0080C0">2</font> <font color="#008000"># the symbol ** means "to the power of"</font>
+
+<font color="#008000"># VARIABLES</font>
+<font color="#008000"># Variables store values for later retrival</font>
+<font color="#008000"># The equals sign means: "store what is evaluated on the right</font>
+<font color="#008000"># using the name on the left"</font>
+<font color="#000000">a</font> <font color="#0000C0">=</font> <font color="#0080C0">2</font><font color="#0000C0">+</font><font color="#0080C0">2</font>
+<font color="#000000">b</font> <font color="#0000C0">=</font> <font color="#000000">a</font><font color="#0000C0">*</font><font color="#0080C0">5</font>
+<font color="#000000">c</font> <font color="#0000C0">=</font> <font color="#000000">b</font><font color="#0000C0">**</font><font color="#0080C0">2</font>
+<font color="#C00000">print</font> <font color="#000000">a</font><font color="#0000C0">,</font><font color="#000000">b</font><font color="#0000C0">,</font><font color="#000000">c</font>
+
+<font color="#008000"># Variables can be of several different types</font>
+<font color="#008000"># Integer type variable (e.g. for counting)</font>
+<font color="#000000">a</font> <font color="#0000C0">=</font> <font color="#0080C0">10</font>
+<font color="#C00000">print</font> <font color="#000000">a</font>
+
+<font color="#008000"># String type variable (e.g. for storing words)</font>
+<font color="#000000">a</font> <font color="#0000C0">=</font> <font color="#004080">"ten"</font>
+<font color="#C00000">print</font> <font color="#000000">a</font>
+
+<font color="#008000"># Float type variable (e.g. for storing fractions)</font>
+<font color="#000000">a</font> <font color="#0000C0">=</font> <font color="#0080C0">10</font>
+<font color="#C00000">print</font> <font color="#000000">a</font>
+<font color="#000000">a</font> <font color="#0000C0">=</font> <font color="#000000">float</font><font color="#0000C0">(</font><font color="#000000">a</font><font color="#0000C0">)</font>
+<font color="#C00000">print</font> <font color="#000000">a</font>
+
+<font color="#008000"># Python automatically chooses types for variables</font>
+<font color="#008000"># based on what you use them to store.</font>
+<font color="#008000"># A common mistake is to assume that integers should</font>
+<font color="#008000"># behave the same way as real numbers (floats)</font>
+<font color="#C00000">print</font> <font color="#0080C0">10</font><font color="#0000C0">/</font><font color="#0080C0">6</font>
+<font color="#C00000">print</font> <font color="#0080C0">10.0</font><font color="#0000C0">/</font><font color="#0080C0">6.0</font>
+<font color="#C00000">print</font> <font color="#000000">round</font><font color="#0000C0">(</font><font color="#0080C0">10.0</font><font color="#0000C0">/</font><font color="#0080C0">6.0</font><font color="#0000C0">)</font>
+
+<font color="#008000"># CONDITIONS</font>
+<font color="#008000"># Python can test if conditional statements are true or false</font>
+<font color="#C00000">print</font> <font color="#0080C0">3</font> <font color="#0000C0">&gt;</font> <font color="#0080C0">4</font>
+<font color="#C00000">print</font> <font color="#0080C0">4</font> <font color="#0000C0">&gt;</font> <font color="#0080C0">3</font>
+
+<font color="#008000"># The symbol for "is equal to?" is "==", not "="</font>
+<font color="#008000"># "=" is the assignment operator for variables</font>
+<font color="#C00000">print</font> <font color="#0080C0">3</font> <font color="#0000C0">==</font> <font color="#0080C0">4</font>
+<font color="#C00000">print</font> <font color="#0080C0">3</font> <font color="#0000C0">==</font> <font color="#0080C0">3</font> <font color="#008000"># If you try "print 3 = 3" you will get an error</font>
+<font color="#C00000">print</font> <font color="#000000">int</font><font color="#0000C0">(</font><font color="#000000">round</font><font color="#0000C0">(</font><font color="#0080C0">10.0</font><font color="#0000C0">/</font><font color="#0080C0">6.0</font><font color="#0000C0">)</font><font color="#0000C0">)</font> <font color="#0000C0">==</font> <font color="#0080C0">10</font><font color="#0000C0">/</font><font color="#0080C0">6</font>
+
+<font color="#008000"># COLLECTIONS</font>
+<font color="#008000"># Python has various methods of grouping variables together</font>
+
+<font color="#008000"># Lists</font>
+<font color="#000000">testlist</font><font color="#0000C0">=</font><font color="#0000C0">[</font><font color="#0080C0">99</font><font color="#0000C0">,</font><font color="#0080C0">98</font><font color="#0000C0">,</font><font color="#0080C0">97</font><font color="#0000C0">,</font><font color="#0080C0">96</font><font color="#0000C0">,</font><font color="#0080C0">95</font><font color="#0000C0">,</font><font color="#0080C0">94</font><font color="#0000C0">,</font><font color="#0080C0">93</font><font color="#0000C0">,</font><font color="#0080C0">92</font><font color="#0000C0">,</font><font color="#0080C0">91</font><font color="#0000C0">]</font>
+<font color="#008000"># We can access list elements by their index</font>
+<font color="#C00000">print</font> <font color="#000000">testlist</font><font color="#0000C0">[</font><font color="#0080C0">3</font><font color="#0000C0">]</font>
+<font color="#008000"># Note that python indices start from zero</font>
+<font color="#C00000">print</font> <font color="#000000">testlist</font><font color="#0000C0">[</font><font color="#0080C0">0</font><font color="#0000C0">]</font>
+<font color="#008000"># We can use negative indices to access elements at the end of lists</font>
+<font color="#C00000">print</font> <font color="#000000">testlist</font><font color="#0000C0">[</font><font color="#0000C0">-</font><font color="#0080C0">1</font><font color="#0000C0">]</font>
+<font color="#008000"># We can access sections of lists by index</font>
+<font color="#C00000">print</font> <font color="#000000">testlist</font><font color="#0000C0">[</font><font color="#0080C0">2</font><font color="#0000C0">:</font><font color="#0080C0">5</font><font color="#0000C0">]</font>
+<font color="#C00000">print</font> <font color="#000000">testlist</font><font color="#0000C0">[</font><font color="#0080C0">3</font><font color="#0000C0">:</font><font color="#0000C0">]</font>
+<font color="#008000"># And we can find the length of lists</font>
+<font color="#C00000">print</font> <font color="#000000">len</font><font color="#0000C0">(</font><font color="#000000">testlist</font><font color="#0000C0">)</font>
+<font color="#008000"># We can easily add to lists</font>
+<font color="#C00000">print</font> <font color="#000000">testlist</font>
+<font color="#000000">testlist</font><font color="#0000C0">.</font><font color="#000000">append</font><font color="#0000C0">(</font><font color="#0080C0">90</font><font color="#0000C0">)</font>
+<font color="#C00000">print</font> <font color="#000000">len</font><font color="#0000C0">(</font><font color="#000000">testlist</font><font color="#0000C0">)</font>
+<font color="#C00000">print</font> <font color="#000000">testlist</font>
+
+<font color="#008000"># Dictionaries</font>
+<font color="#008000"># Another grouping method which is often useful is a dictionary</font>
+<font color="#008000"># It works quite differently to a list</font>
+<font color="#008000"># Here is an inventory at a zoo</font>
+<font color="#000000">zoo</font><font color="#0000C0">=</font><font color="#0000C0">{</font><font color="#0000C0">}</font>
+<font color="#000000">zoo</font><font color="#0000C0">[</font><font color="#004080">"elephant"</font><font color="#0000C0">]</font><font color="#0000C0">=</font><font color="#0080C0">4</font>
+<font color="#000000">zoo</font><font color="#0000C0">[</font><font color="#004080">"monkey"</font><font color="#0000C0">]</font><font color="#0000C0">=</font><font color="#0080C0">12</font>
+<font color="#000000">zoo</font><font color="#0000C0">[</font><font color="#004080">"giraffe"</font><font color="#0000C0">]</font><font color="#0000C0">=</font><font color="#0080C0">2</font>
+<font color="#000000">zoo</font><font color="#0000C0">[</font><font color="#004080">"squirrel"</font><font color="#0000C0">]</font><font color="#0000C0">=</font><font color="#0080C0">100</font>
+
+<font color="#C00000">print</font> <font color="#000000">zoo</font>
+<font color="#C00000">print</font> <font color="#000000">zoo</font><font color="#0000C0">[</font><font color="#004080">"squirrel"</font><font color="#0000C0">]</font>
+<font color="#008000"># Here is a small English dictionary</font>
+<font color="#008000"># Definitions from http://dictionary.reference.com/</font>
+<font color="#000000">English</font><font color="#0000C0">=</font><font color="#0000C0">{</font><font color="#0000C0">}</font>
+<font color="#000000">English</font><font color="#0000C0">[</font><font color="#004080">"elephant"</font><font color="#0000C0">]</font><font color="#0000C0">=</font><font color="#004080">"Either  of  two  large,  five-toed  pachyderms  of  the  family  Elephantidae,  characterized  by  a  long,  prehensile  trunk  formed  of  the  nose  and  upper  lip."</font>
+<font color="#000000">English</font><font color="#0000C0">[</font><font color="#004080">"monkey"</font><font color="#0000C0">]</font><font color="#0000C0">=</font><font color="#004080">"Any mammal of the order Primates, including the guenons, macaques, langurs, and capuchins, but excluding humans, the anthropoid apes, and, usually, the tarsier and prosimians."</font>
+<font color="#000000">English</font><font color="#0000C0">[</font><font color="#004080">"giraffe"</font><font color="#0000C0">]</font><font color="#0000C0">=</font><font color="#004080">"A tall, long-necked, spotted ruminant, Giraffa camelopardalis, of Africa: the tallest living quadruped animal."</font>
+<font color="#000000">English</font><font color="#0000C0">[</font><font color="#004080">"squirrel"</font><font color="#0000C0">]</font><font color="#0000C0">=</font><font color="#004080">"Any of numerous arboreal, bushy-tailed rodents of the genus Sciurus, of the family Sciuridae."</font>
+<font color="#C00000">print</font> <font color="#000000">English</font>
+<font color="#C00000">print</font> <font color="#000000">English</font><font color="#0000C0">[</font><font color="#004080">"squirrel"</font><font color="#0000C0">]</font>
+
+<font color="#008000"># LOOPS</font>
+<font color="#008000"># Computers specialise in performing repetitive tasks</font>
+<font color="#008000"># Programming loops is the main way to command computers</font>
+<font color="#008000"># to perform such tasks.</font>
+<font color="#000000">testlist</font><font color="#0000C0">=</font><font color="#0000C0">[</font><font color="#0080C0">99</font><font color="#0000C0">,</font><font color="#0080C0">98</font><font color="#0000C0">,</font><font color="#0080C0">97</font><font color="#0000C0">,</font><font color="#0080C0">96</font><font color="#0000C0">,</font><font color="#0080C0">95</font><font color="#0000C0">,</font><font color="#0080C0">94</font><font color="#0000C0">]</font>
+
+<font color="#008000"># for every element in testlist</font>
+<font color="#C00000">for</font> <font color="#000000">x</font> <font color="#C00000">in</font> <font color="#000000">testlist</font><font color="#0000C0">:</font>
+    <font color="#008000"># note the indent &lt;--</font>
+    <font color="#008000"># Python insists that blocks of connected text are represented by consistent indentation</font>
+    <font color="#000000">v1</font><font color="#0000C0">=</font><font color="#000000">x</font><font color="#0000C0">**</font><font color="#0080C0">2</font>
+    <font color="#000000">v2</font><font color="#0000C0">=</font><font color="#000000">x</font><font color="#0000C0">**</font><font color="#0080C0">3</font>
+    <font color="#000000">v3</font><font color="#0000C0">=</font><font color="#000000">x</font><font color="#0000C0">**</font><font color="#0080C0">4</font>
+    <font color="#008000"># print out a report, including the value of x, x**2 etc.</font>
+    <font color="#C00000">print</font> <font color="#000000">x</font><font color="#0000C0">,</font><font color="#000000">v1</font><font color="#0000C0">,</font><font color="#000000">v2</font><font color="#0000C0">,</font><font color="#000000">v3</font>
+
+<font color="#008000"># The for statement executes the block of indented code</font>
+<font color="#008000"># with each of the elements of testlist assigned to variable x in turn</font>
+<font color="#008000"># 7 times tables</font>
+<font color="#C00000">for</font> <font color="#000000">x</font> <font color="#C00000">in</font> <font color="#000000">xrange</font><font color="#0000C0">(</font><font color="#0080C0">1</font><font color="#0000C0">,</font><font color="#0080C0">13</font><font color="#0000C0">)</font><font color="#0000C0">:</font>
+    <font color="#C00000">print</font> <font color="#004080">"7 * "</font><font color="#0000C0">+</font><font color="#000000">str</font><font color="#0000C0">(</font><font color="#000000">x</font><font color="#0000C0">)</font><font color="#0000C0">+</font><font color="#004080">" = "</font><font color="#0000C0">+</font><font color="#000000">str</font><font color="#0000C0">(</font><font color="#0080C0">7</font><font color="#0000C0">*</font><font color="#000000">x</font><font color="#0000C0">)</font>
+
+<font color="#008000"># IF-THEN-ELSE</font>
+<font color="#008000"># In order for computers to be able to automatically make decisions</font>
+<font color="#008000"># we need a way to give them instructions to follow if a certain</font>
+<font color="#008000"># set of conditions are true.  We do this with an if-statement</font>
+<font color="#000000">z</font><font color="#0000C0">=</font><font color="#0080C0">33</font>
+<font color="#008000"># The test condition here is "z&gt;10".  It can evaluate to "true" or "false"</font>
+<font color="#008000"># Only one of the two blocks of code below will be executed</font>
+<font color="#C00000">if</font> <font color="#0000C0">(</font><font color="#000000">z</font><font color="#0000C0">&gt;</font><font color="#0080C0">10</font><font color="#0000C0">)</font><font color="#0000C0">:</font>
+    <font color="#008000"># This indented block of code is executed if the condition is true</font>
+    <font color="#C00000">print</font> <font color="#004080">"z is big!"</font>
+    <font color="#000000">q</font><font color="#0000C0">=</font><font color="#0080C0">5</font>
+<font color="#C00000">else</font><font color="#0000C0">:</font>
+    <font color="#008000"># This indented block of code is executed if the condition is false</font>
+    <font color="#C00000">print</font> <font color="#004080">"z is small!"</font>
+    <font color="#000000">q</font><font color="#0000C0">=</font><font color="#0080C0">1</font>
+<font color="#008000"># q has been assigned a value, depending on the value of z (whether it's big or small)</font>
+<font color="#C00000">print</font> <font color="#000000">q</font>
+
+<font color="#008000"># FUNCTIONS</font>
+
+<font color="#008000"># Often we want to repeat complicated set of instructions several times, but with different input</font>
+<font color="#008000"># but not in a single for-loop.  In this case it can be useful to define a function.  These are</font>
+<font color="#008000"># analagous to mathematical functions, they take some arguments as input, carry out some tasks, and</font>
+<font color="#008000"># optionally provide some output.  Typically, the advantage of installing Python packages is that they</font>
+<font color="#008000"># contain many complicated, interesting functions, that we can re-use if we just know what input data</font>
+<font color="#008000"># to supply them, and what they do.</font>
+
+<font color="#008000"># First let's look at an imported function</font>
+<font color="#C00000">import</font> <font color="#000000">random</font>
+<font color="#008000"># randint(a,b) generates random integers in range [a,b] including both endpoints</font>
+<font color="#C00000">print</font> <font color="#000000">random</font><font color="#0000C0">.</font><font color="#000000">randint</font><font color="#0000C0">(</font><font color="#0080C0">0</font><font color="#0000C0">,</font><font color="#0080C0">10</font><font color="#0000C0">)</font>
+<font color="#C00000">print</font> <font color="#000000">random</font><font color="#0000C0">.</font><font color="#000000">randint</font><font color="#0000C0">(</font><font color="#0080C0">0</font><font color="#0000C0">,</font><font color="#0080C0">10</font><font color="#0000C0">)</font>
+<font color="#C00000">print</font> <font color="#000000">random</font><font color="#0000C0">.</font><font color="#000000">randint</font><font color="#0000C0">(</font><font color="#0080C0">0</font><font color="#0000C0">,</font><font color="#0080C0">10</font><font color="#0000C0">)</font>
+
+<font color="#008000"># We can define our own function of a and b which does something different</font>
+<font color="#C00000">def</font> <font color="#000000">myfunc</font><font color="#0000C0">(</font><font color="#000000">a</font><font color="#0000C0">,</font><font color="#000000">b</font><font color="#0000C0">)</font><font color="#0000C0">:</font>
+    <font color="#000000">c</font><font color="#0000C0">=</font><font color="#000000">a</font><font color="#0000C0">+</font><font color="#000000">b</font>
+    <font color="#000000">d</font><font color="#0000C0">=</font><font color="#000000">a</font><font color="#0000C0">**</font><font color="#0080C0">2</font>
+    <font color="#C00000">return</font><font color="#0000C0">(</font><font color="#000000">c</font><font color="#0000C0">*</font><font color="#000000">d</font><font color="#0000C0">)</font>
+
+<font color="#C00000">print</font> <font color="#000000">myfunc</font><font color="#0000C0">(</font><font color="#0080C0">10</font><font color="#0000C0">,</font><font color="#0080C0">29</font><font color="#0000C0">)</font>
+<font color="#C00000">print</font> <font color="#000000">myfunc</font><font color="#0000C0">(</font><font color="#0080C0">1</font><font color="#0000C0">,</font><font color="#0080C0">2</font><font color="#0000C0">)</font>
+<font color="#C00000">print</font> <font color="#000000">myfunc</font><font color="#0000C0">(</font><font color="#0080C0">10.3</font><font color="#0000C0">,</font><font color="#0080C0">45.9</font><font color="#0000C0">)</font>
+
+<font color="#008000"># Multiplication tables</font>
+<font color="#C00000">def</font> <font color="#000000">multiTab</font><font color="#0000C0">(</font><font color="#000000">y</font><font color="#0000C0">)</font><font color="#0000C0">:</font>
+    <font color="#C00000">print</font> <font color="#000000">str</font><font color="#0000C0">(</font><font color="#000000">y</font><font color="#0000C0">)</font><font color="#0000C0">+</font><font color="#004080">" times tables:\n"</font>
+    <font color="#C00000">for</font> <font color="#000000">x</font> <font color="#C00000">in</font> <font color="#000000">xrange</font><font color="#0000C0">(</font><font color="#0080C0">1</font><font color="#0000C0">,</font><font color="#0080C0">13</font><font color="#0000C0">)</font><font color="#0000C0">:</font>
+        <font color="#C00000">print</font> <font color="#000000">str</font><font color="#0000C0">(</font><font color="#000000">x</font><font color="#0000C0">)</font><font color="#0000C0">+</font><font color="#004080">" * "</font><font color="#0000C0">+</font><font color="#000000">str</font><font color="#0000C0">(</font><font color="#000000">y</font><font color="#0000C0">)</font><font color="#0000C0">+</font><font color="#004080">" = "</font><font color="#0000C0">+</font><font color="#000000">str</font><font color="#0000C0">(</font><font color="#000000">x</font><font color="#0000C0">*</font><font color="#000000">y</font><font color="#0000C0">)</font>
+    <font color="#C00000">print</font> <font color="#004080">"\n"</font>
+
+<font color="#C00000">for</font> <font color="#000000">z</font> <font color="#C00000">in</font> <font color="#000000">xrange</font><font color="#0000C0">(</font><font color="#0080C0">1</font><font color="#0000C0">,</font><font color="#0080C0">13</font><font color="#0000C0">)</font><font color="#0000C0">:</font>
+    <font color="#000000">multiTab</font><font color="#0000C0">(</font><font color="#000000">z</font><font color="#0000C0">)</font><font color="#000000"></font></font></pre>
+</div>
+
+<h3>A quick Python exercise</h3>
+
+<p>Try writing a short script yourself that does the following:
+<ul>
+<li>Defines the above function for generating multiplication tables for any integer
+<li>Asks the user to input which times table she would like to see
+<li>Stores the number representing the requested times table as a variable
+<li>Automatically generates the requested times table
+</ul>
+You will have to search online to find out the correct syntax or function names to use which will make Python ask the user a question and store the answer.</p>
+
+<hr></hr>
+
+<p>
+<a href="../">Overview</a> &there4;
+<a href="../Installation">Installation</a> &there4;
+<a href="../FirstScript">First Script</a> &there4;
+<a href="../Execution">Execution</a> &there4;
+<a href="../Libraries">Libraries</a> &there4;
+<a href="../Structure">Structure</a> &there4;
+<a href="../Resources">Other Resources</a>
+</p>
+<hr></hr>
+
+<p>
+<a href="http://www.flickr.com/photos/conchur/2318555571/"><IMG SRC="http://farm4.static.flickr.com/3285/2318555571_e9d55697d4_t.jpg" /></a>
+<a href="http://www.flickr.com/photos/conchur/2318560555/"><IMG SRC="http://farm3.static.flickr.com/2176/2318560555_995dfd80a7_t.jpg" /></a>
+<a href="http://www.flickr.com/photos/conchur/2318537723/"><img src="http://farm3.static.flickr.com/2054/2318537723_b757fc5e19_t.jpg" /></a>
+<a href="http://www.flickr.com/photos/conchur/2320268089/"><IMG SRC="http://farm3.static.flickr.com/2036/2320268089_892ab791bf_t.jpg" /></a>
+<a href="http://www.flickr.com/photos/conchur/2320278987/"><IMG SRC="http://farm4.static.flickr.com/3245/2320278987_cb105a357e_t.jpg" /></a>
+</p>
+
+<h5>Last updated: April 2012</h5>
+</body>
+</html>
