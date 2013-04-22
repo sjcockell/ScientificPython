@@ -1,4 +1,3 @@
-
 header,nav,footer,article {display: block;}
 nav{background-color: white; float:left; width:180px; margin-right: 5px;}
 article {float:left; width:1000px;}
@@ -137,7 +136,7 @@ th { background-color: #bbbbbb }
 
 div.cbox{
 	background-color:	rgb(237,237,237);
-	padding-left: 50pt;
+	padding-left: 0pt;
 	}
 	
 	
@@ -180,5 +179,3 @@ div.cbox{
 		color: white;
 		font-weight: 400;
 	}
-
-

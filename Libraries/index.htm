@@ -14,8 +14,10 @@ by <a href="http://www.staff.ncl.ac.uk/conor.lawless/">Conor Lawless</a> email: 
 
 <h2><a href="http://python.org">Python</a> libraries</h2>
 
+<p>Before we get onto the <a href="../Structure">Structure</a> section, which is quite long and describes how the Python language works, I'll briefly introduce the idea of extending functionality in Python using libraries (also called packages).  Importing libraries or packages allows you to tweak Python to better suit the particular problem you're currently trying to solve.</p>
+
 <p>
-In the last example, you might have noticed a line which began with "import".  One of the best things about Python is that many people have developed packages for it which add to its capabilities, typically by providing you with access to functions (which we will learn about in the <a href="../Structure">Structure</a> section).  Many packages are included with the default Python installation (e.g. math, random, os, sys).  Try importing math and typing "math.".  You will get a prompt listing possible function names.  To learn more, you could search online for the Python math package <a href="http://docs.python.org/library/math.html">documentation</a>, or type help(math) at the prompt in IDLE to find out more about the math package.  This syntax works for any package.  Try executing:
+In the <a href="../Execution">previous</a> example, you might have noticed a line which began with "import".  One of the best things about Python is that many people have developed packages for it which add to its capabilities, typically by providing you with access to functions (which we will learn about in the <a href="../Structure">Structure</a> section).  Many packages are already included with the default Python installation (e.g. math, random, os, sys).  Try importing math and typing "math.".  You will get a prompt listing possible function names (e.g. cos, sin).  To learn more, you could search online for the Python math package <a href="http://docs.python.org/library/math.html">documentation</a>, or type help(math) at the prompt in IDLE to find out more about the math package.  This help structure works for any package.  Try executing:
 
 <div class="cbox">
 <pre><font face="Lucida,Courier New"><font color="#C00000">import</font> <font color="#000000">math</font><font color="#000000"></font></font>
@@ -38,12 +40,16 @@ You should also try this out:
 </div>
 
 <p>
-Additional, external Python packages can be found online which can greatly extend Python's functionality.  For example, try downloading and installing these two useful packages (Note you will need to request administrator permissions on most Newcastle University machines, but these should already be installed on computers in the Dene cluster):
+Additional, external Python packages can be found online and added to your Python installation, greatly extending Python's functionality.  For example, try downloading and installing these three useful packages.  Unfortunately, only NumPy is currently installed on computers in the Dene cluster.
 
 <ul>
 <li><a href="http://www.pythonware.com/products/pil/">Python Imaging Library</a></li>
-<li><a href="http://numpy.scipy.org/">NumPy (Numerical Python)<a/></li>
+<li><a href="http://www.numpy.org/">NumPy<a/> (Numerical Python)</li>
+<li><a href="http://www.pygame.org/">PyGame</a> (Python for games development: great for building powerful, responsive, graphical user interfaces)
 </ul>
+</p>
+
+<p>Note that if you are running a 64-bit version of Windows, it is often better to download your Python packages from <a href="http://www.lfd.uci.edu/~gohlke/pythonlibs/">this useful site</a>, maintained by <a href="http://www.lfd.uci.edu/~gohlke/">Christoph Gohlke</a>.</p>
 
 <hr></hr>
 
@@ -66,6 +72,6 @@ Additional, external Python packages can be found online which can greatly exten
 <a href="http://www.flickr.com/photos/conchur/2320278987/"><IMG SRC="http://farm4.static.flickr.com/3245/2320278987_cb105a357e_t.jpg" /></a>
 </p>
 
-<h5>Last updated: April 2012</h5>
+<h5>Last updated: April 2013</h5>
 </body>
 </html>

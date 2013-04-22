@@ -16,31 +16,31 @@ by <a href="http://www.staff.ncl.ac.uk/conor.lawless/">Conor Lawless</a> email: 
 
 <h3>Hello world!</h3>
 
-<p> Now that we have a script written (first.py), the next question is how to make it run?  There are many ways to do this:</p>
+<p> Now that we have a script written (myscript.py), the next question is how to make it run?  There are many ways to do this:</p>
 
-<ul>
+<ol>
 <li>Run from within the IDLE GUI (useful for debugging code)</li>
 <li>Double-click on the script icon in Windows (fast way to execute a script)</li>
 <li>Run from the command-line (useful for preserving messages from Python, or executing scripts on servers or on other operating systems)</li>
-</ul>
+</ol>
 
-<p> To run a script from within the IDLE GUI: if the script is not open, then right-click on the first.py icon, and choose "Edit with IDLE".  Once the script is opened in the IDLE text editor, to run it, just select <b>Run -> Run Module</b> (or as a shortcut, you can press F5).  If the script has been modified since it was last saved, IDLE will prompt you to save the script before running it.  This is good practise in case IDLE crashes while trying to run the script.</p>
+<p>To run a script from within the IDLE GUI: if the script is not open, then right-click on the myscript.py icon, and choose "Edit with IDLE".  Once the script is opened in the IDLE text editor, to run it, just go <b>Run -> Run Module</b> (or as a shortcut, you can press F5 instead).  If the script has been modified since it was last saved, IDLE will prompt you to save the script before running it.  This is good practise in case IDLE crashes while trying to run the script.</p>
 
-<p> Hopefully you will see that Python has printed out "Hello World!" to screen as you have told it, and is waiting for further instructions.  You could just type the following into the shell to achieve the same effect: </p>
+<p>Hopefully you will see that Python has printed out "Hello World!" to screen as you have told it, and is waiting for further instructions.  You could just type the following into the shell to achieve the same effect: </p>
 
 <div class="cbox">
 <font color="#C00000">print</font><font color="#0000C0">(</font><font color="#004080">"Hello World!"</font><font color="#0000C0">)</font><font color="#000000"></font></font></pre>
 </div>
 
-<p> Typing short commands into the shell directly is useful for trying things out, and we'll do some more of that later.</p>
+<p>Typing short commands into the shell directly is useful for trying things out, and we'll do some more of that later.</p>
 
-<p> The second method above is self-explanatory.  If Python is installed correctly under windows, double clicking on a .py file will execute the script.</p>
+<p>The second method above is self-explanatory.  If Python is installed correctly under windows, double clicking on a .py file will execute the script.  However, for this trivial example, Python will open a terminal window, print the message the the window and close the window immediately.  This will likely happen so fast that you will not have a chance to read the message!  However, this can be a very useful method to execute more complicated scripts.</p>
 
-<p> To run from the command-line, we need to get a Windows command prompt.  To do this go <b>Start -> Run</b>, type "cmd" in the Open dialog box and click "OK".  Navigate to the location of your file on your hard drive (e.g. <b> cd H:\PythonStuff</b>.  Once in the correct directory, and assuming you've named the script first.py type: <b>python first.py</b></p>
+<p>The third method, running from the command-line, is useful for doing computation remotely on another computer, or for automating the simultaneous execution of several scripts on your own computer.  It requires that the Python executable is in your <a href="http://www.anthonydebarros.com/2011/10/15/setting-up-python-in-windows-7/">PATH</a>.  This is a little tricky under Windows, so I won't go into it today.</p>
 
 <h3>Some more complicated, flashy demo code</h3>
 
-<p>Ok, so now you know three different ways to execute a Python script in Windows, save the script below and try to use all three methods to execute it, and see what happens.  This code might seem incomprehensible.  It is quite complicated and difficult, but I hope that you'll be surprised at the complexity of the result given how short the text is.  Most of the lines in this script are a bit obscure and are simply there to get the window popup working.  We won't go into that specifically in this course, but I hope that by the end of the day you will be able to recognise several important features of this script and feel confident making a few tweaks to it here and there to see what happens.  A version with comments is <a href="../Resources/Colours.html">here</a></p>
+<p>Ok, so now you know two different ways to execute a Python script in Windows, save the script below and try to use both methods to execute it, and see what happens.  This code might seem incomprehensible.  It is quite complicated and difficult, but I hope that you'll be surprised at the complexity of the result given how short the text is.  Most of the lines in this script are a bit obscure and are simply there to get the window popup working.  We won't go into that specifically in this course, but I hope that by the end of the day you will be able to recognise several important features of this script and feel confident making a few tweaks to it here and there to see what happens.  A version with some explanatory comments can be seen <a href="../Resources/Colours.html">here</a></p>
 
 <div class="cbox">
 <pre><font face="Lucida,Courier New"><font color="#C00000">import</font> <font color="#000000">Tkinter</font><font color="#0000C0">,</font> <font color="#000000">numpy</font>
@@ -65,7 +65,7 @@ by <a href="http://www.staff.ncl.ac.uk/conor.lawless/">Conor Lawless</a> email: 
 <font color="#000000">window</font><font color="#0000C0">.</font><font color="#000000">destroy</font><font color="#0000C0">(</font><font color="#0000C0">)</font><font color="#000000"></font></font></pre>
 </div>
 
-<p>If your (Windows) computer has the ability to play sound, you could try the simpler but equally awesome example below.  A version with human readable comments is <a href="../Resources/Beep.html">here</a>.</p>
+<p>If your (Windows) computer has the ability to play sound, you could try the simpler but equally awesome example below.  A version with explanatory comments can be seen <a href="../Resources/Beep.html">here</a>.</p>
 
 <div class="cbox">
 <pre><font face="Lucida,Courier New"><font color="#C00000">import</font> <font color="#000000">winsound</font>
@@ -95,6 +95,6 @@ by <a href="http://www.staff.ncl.ac.uk/conor.lawless/">Conor Lawless</a> email: 
 <a href="http://www.flickr.com/photos/conchur/2320278987/"><IMG SRC="http://farm4.static.flickr.com/3245/2320278987_cb105a357e_t.jpg" /></a>
 </p>
 
-<h5>Last updated: April 2012</h5>
+<h5>Last updated: April 2013</h5>
 </body>
 </html>
