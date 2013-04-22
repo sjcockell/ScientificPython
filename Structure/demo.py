@@ -25,7 +25,9 @@ print a
 a = "ten"
 print a
 
-# Float type variable (e.g. for storing fractions)
+# Float type variable (e.g. for storing real numbers)
+a = 10.0
+print a
 a = 10
 print a
 a = float(a)
@@ -45,7 +47,7 @@ print 3 > 4
 print 4 > 3
 
 # The symbol for "is equal to?" is "==", not "="
-# "=" is the assignment operator for variables
+# We saw above that "=" is the assignment operator for variables
 print 3 == 4
 print 3 == 3 # If you try "print 3 = 3" you will get an error
 print int(round(10.0/6.0)) == 10/6
