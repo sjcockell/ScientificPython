@@ -17,8 +17,8 @@ by <a href="http://www.staff.ncl.ac.uk/conor.lawless/">Conor Lawless</a> email: 
 
 <p>
 Read the comments below, and copy the rest of the code into your IDLE GUI line by line, trying to understand what is going on at each step.</p>
-
 <div class="cbox">
+
 <pre><font face="Lucida,Courier New"><font color="#008000"># Text like this, beginning with "#" is a comment.</font>
 <font color="#008000"># Comments are for humans to read and computers to ignore.</font>
 
@@ -46,10 +46,10 @@ Read the comments below, and copy the rest of the code into your IDLE GUI line b
 <font color="#000000">a</font> <font color="#0000C0">=</font> <font color="#004080">"ten"</font>
 <font color="#C00000">print</font> <font color="#000000">a</font>
 
-<font color="#008000"># Float type variable (e.g. for storing fractions)</font>
-<font color="#000000">a</font> <font color="#0000C0">=</font> <font color="#0080C0">10</font>
+<font color="#008000"># Float type variable (e.g. for storing real numbers)</font>
+<font color="#000000">a</font> <font color="#0000C0">=</font> <font color="#0080C0">10.0</font>
 <font color="#C00000">print</font> <font color="#000000">a</font>
-<font color="#000000">a</font> <font color="#0000C0">=</font> <font color="#000000">float</font><font color="#0000C0">(</font><font color="#000000">a</font><font color="#0000C0">)</font>
+<font color="#000000">a</font> <font color="#0000C0">=</font> <font color="#0080C0">10</font>
 <font color="#C00000">print</font> <font color="#000000">a</font>
 
 <font color="#008000"># Python automatically chooses types for variables</font>
@@ -60,13 +60,18 @@ Read the comments below, and copy the rest of the code into your IDLE GUI line b
 <font color="#C00000">print</font> <font color="#0080C0">10.0</font><font color="#0000C0">/</font><font color="#0080C0">6.0</font>
 <font color="#C00000">print</font> <font color="#000000">round</font><font color="#0000C0">(</font><font color="#0080C0">10.0</font><font color="#0000C0">/</font><font color="#0080C0">6.0</font><font color="#0000C0">)</font>
 
+<font color="#008000"># We can manually change the type of variables if we have to</font>
+<font color="#000000">a</font> <font color="#0000C0">=</font> <font color="#0080C0">12</font>
+<font color="#000000">b</font> <font color="#0000C0">=</font> <font color="#000000">float</font><font color="#0000C0">(</font><font color="#000000">a</font><font color="#0000C0">)</font>
+<font color="#C00000">print</font> <font color="#000000">a</font><font color="#0000C0">,</font><font color="#000000">b</font>
+
 <font color="#008000"># CONDITIONS</font>
 <font color="#008000"># Python can test if conditional statements are true or false</font>
 <font color="#C00000">print</font> <font color="#0080C0">3</font> <font color="#0000C0">&gt;</font> <font color="#0080C0">4</font>
 <font color="#C00000">print</font> <font color="#0080C0">4</font> <font color="#0000C0">&gt;</font> <font color="#0080C0">3</font>
 
 <font color="#008000"># The symbol for "is equal to?" is "==", not "="</font>
-<font color="#008000"># "=" is the assignment operator for variables</font>
+<font color="#008000"># We saw above that "=" is the assignment operator for variables</font>
 <font color="#C00000">print</font> <font color="#0080C0">3</font> <font color="#0000C0">==</font> <font color="#0080C0">4</font>
 <font color="#C00000">print</font> <font color="#0080C0">3</font> <font color="#0000C0">==</font> <font color="#0080C0">3</font> <font color="#008000"># If you try "print 3 = 3" you will get an error</font>
 <font color="#C00000">print</font> <font color="#000000">int</font><font color="#0000C0">(</font><font color="#000000">round</font><font color="#0000C0">(</font><font color="#0080C0">10.0</font><font color="#0000C0">/</font><font color="#0080C0">6.0</font><font color="#0000C0">)</font><font color="#0000C0">)</font> <font color="#0000C0">==</font> <font color="#0080C0">10</font><font color="#0000C0">/</font><font color="#0080C0">6</font>
@@ -92,6 +97,8 @@ Read the comments below, and copy the rest of the code into your IDLE GUI line b
 <font color="#000000">testlist</font><font color="#0000C0">.</font><font color="#000000">append</font><font color="#0000C0">(</font><font color="#0080C0">90</font><font color="#0000C0">)</font>
 <font color="#C00000">print</font> <font color="#000000">len</font><font color="#0000C0">(</font><font color="#000000">testlist</font><font color="#0000C0">)</font>
 <font color="#C00000">print</font> <font color="#000000">testlist</font>
+<font color="#008000"># Lists don't have to be filled with numbers</font>
+<font color="#000000">fruits</font><font color="#0000C0">=</font><font color="#0000C0">[</font><font color="#004080">"apples"</font><font color="#0000C0">,</font><font color="#004080">"pears"</font><font color="#0000C0">,</font><font color="#004080">"oranges"</font><font color="#0000C0">,</font><font color="#004080">"apples"</font><font color="#0000C0">,</font><font color="#004080">"bananas"</font><font color="#0000C0">]</font>
 
 <font color="#008000"># Dictionaries</font>
 <font color="#008000"># Another grouping method which is often useful is a dictionary</font>
@@ -124,7 +131,8 @@ Read the comments below, and copy the rest of the code into your IDLE GUI line b
 <font color="#008000"># for every element in testlist</font>
 <font color="#C00000">for</font> <font color="#000000">x</font> <font color="#C00000">in</font> <font color="#000000">testlist</font><font color="#0000C0">:</font>
     <font color="#008000"># note the indent &lt;--</font>
-    <font color="#008000"># Python insists that blocks of connected text are represented by consistent indentation</font>
+    <font color="#008000"># Python insists that blocks of related code</font>
+    <font color="#008000"># are represented by consistent indentation</font>
     <font color="#000000">v1</font><font color="#0000C0">=</font><font color="#000000">x</font><font color="#0000C0">**</font><font color="#0080C0">2</font>
     <font color="#000000">v2</font><font color="#0000C0">=</font><font color="#000000">x</font><font color="#0000C0">**</font><font color="#0080C0">3</font>
     <font color="#000000">v3</font><font color="#0000C0">=</font><font color="#000000">x</font><font color="#0000C0">**</font><font color="#0080C0">4</font>
@@ -190,7 +198,9 @@ Read the comments below, and copy the rest of the code into your IDLE GUI line b
 
 <font color="#C00000">for</font> <font color="#000000">z</font> <font color="#C00000">in</font> <font color="#000000">xrange</font><font color="#0000C0">(</font><font color="#0080C0">1</font><font color="#0000C0">,</font><font color="#0080C0">13</font><font color="#0000C0">)</font><font color="#0000C0">:</font>
     <font color="#000000">multiTab</font><font color="#0000C0">(</font><font color="#000000">z</font><font color="#0000C0">)</font><font color="#000000"></font></font></pre>
+
 </div>
+
 
 <h3>A quick Python exercise</h3>
 

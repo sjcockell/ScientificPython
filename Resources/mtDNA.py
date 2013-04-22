@@ -5,7 +5,6 @@ import string, urllib
 # Text file derived from http://www.mitomap.org/MITOMAP/HumanMitoSeq
 URL="http://www.staff.ncl.ac.uk/conor.lawless/ScientificPython/Resources/mtDNA.txt"
 textfile=urllib.urlopen(URL)
-#textfile=open("H:\\mtDNA.txt","r")
 lines=textfile.readlines()
 textfile.close()
 mtDNA=string.join(lines,sep="")

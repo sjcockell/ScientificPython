@@ -30,8 +30,6 @@ a = 10.0
 print a
 a = 10
 print a
-a = float(a)
-print a
 
 # Python automatically chooses types for variables
 # based on what you use them to store.
@@ -40,6 +38,11 @@ print a
 print 10/6
 print 10.0/6.0
 print round(10.0/6.0)
+
+# We can manually change the type of variables if we have to
+a = 12
+b = float(a)
+print a,b
 
 # CONDITIONS
 # Python can test if conditional statements are true or false
@@ -73,6 +76,8 @@ print testlist
 testlist.append(90)
 print len(testlist)
 print testlist
+# Lists don't have to be filled with numbers
+fruits=["apples","pears","oranges","apples","bananas"]
 
 # Dictionaries
 # Another grouping method which is often useful is a dictionary
@@ -105,7 +110,8 @@ testlist=[99,98,97,96,95,94]
 # for every element in testlist
 for x in testlist:
     # note the indent <--
-    # Python insists that blocks of connected text are represented by consistent indentation
+    # Python insists that blocks of related code
+    # are represented by consistent indentation
     v1=x**2
     v2=x**3
     v3=x**4
