@@ -5,7 +5,6 @@
 <font color="#008000"># Text file derived from http://www.mitomap.org/MITOMAP/HumanMitoSeq</font>
 <font color="#000000">URL</font><font color="#0000C0">=</font><font color="#004080">"http://www.staff.ncl.ac.uk/conor.lawless/ScientificPython/Resources/mtDNA.txt"</font>
 <font color="#000000">textfile</font><font color="#0000C0">=</font><font color="#000000">urllib</font><font color="#0000C0">.</font><font color="#000000">urlopen</font><font color="#0000C0">(</font><font color="#000000">URL</font><font color="#0000C0">)</font>
-<font color="#008000">#textfile=open("H:\\mtDNA.txt","r")</font>
 <font color="#000000">lines</font><font color="#0000C0">=</font><font color="#000000">textfile</font><font color="#0000C0">.</font><font color="#000000">readlines</font><font color="#0000C0">(</font><font color="#0000C0">)</font>
 <font color="#000000">textfile</font><font color="#0000C0">.</font><font color="#000000">close</font><font color="#0000C0">(</font><font color="#0000C0">)</font>
 <font color="#000000">mtDNA</font><font color="#0000C0">=</font><font color="#000000">string</font><font color="#0000C0">.</font><font color="#000000">join</font><font color="#0000C0">(</font><font color="#000000">lines</font><font color="#0000C0">,</font><font color="#000000">sep</font><font color="#0000C0">=</font><font color="#004080">""</font><font color="#0000C0">)</font>
