@@ -13,4 +13,4 @@ image manipulation or text manipulation.
 # Print the text to screen
 print(websiteText)
 # Read the text aloud
-#speaker.Speak(websiteText)
+speaker.Speak(websiteText)
