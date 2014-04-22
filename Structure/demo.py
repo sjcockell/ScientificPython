@@ -124,9 +124,10 @@ for x in testlist:
 for x in xrange(1,13):
     print "7 * "+str(x)+" = "+str(7*x)
 
-# We can also generate new lists based on old ones as follows.
-# This line converts each of the integer numbers in testlist to a float
-# and divides by 3.0
+# List comprehensions
+# We can also generate new lists based on old ones.
+# Convert each of the integer numbers in testlist to a float
+# and divide by 3.0:
 convert_and_divide=[float(i)/3.0 for i in testlist]
 print(convert_and_divide)
 
