@@ -13,7 +13,11 @@ body {background-color: white;
 	font-weight: 300;
 	}
 	
-p { 	
+p {
+	margin-top: 10px; 
+	padding-top: 0px;
+	margin-bottom: 10px;
+	padding-bottom: 0px;
 	font-weight: 300;
 	}	
 
@@ -40,9 +44,10 @@ a:hover{background: black;
 
 h1 {
 	margin-top: 0px; 
-	padding-bottom: 0px;
+	padding-top: 0px;
 	color: black;
-    margin-bottom: 10px;
+   margin-bottom: 0px;
+	padding-bottom: 0px;
 	background-colour: white;
 	font-size: 50pt;
 	font-weight: 600;
@@ -51,6 +56,9 @@ h1 {
 
 h2{ 
 	margin-top: 0px; 
+   margin-bottom: 0px;
+	padding-top: 0px;
+	padding-bottom: 0px;
 	color: black;
 	font-size: 30pt;
 	font-weight: 600;
@@ -58,7 +66,7 @@ h2{
 
 h3 {
 	margin-top: 0px; 
-    	margin-bottom: 0px;
+   margin-bottom: 0px;
 	padding-top: 0px;
 	padding-bottom: 0px;
 	color: black;
@@ -67,7 +75,7 @@ h3 {
 	}
 
 h4 { 
-	margin-top: 0px; 
+	margin-top: 10px; 
 	margin-bottom: 0px;
 	padding-top: 0px;
 	padding-bottom: 0px;
@@ -79,9 +87,10 @@ h5 {
 	margin-top: 0px; 
 	padding: 0px;
 	color: black;
-    margin-bottom: 0px;
+   margin-bottom: 0px;
 	font-weight: normal;
-	font-size: 8pt;
+	font-size: 14pt;
+	font-style: italic;
 	}
 
 hr{	border: 0px;
@@ -97,7 +106,7 @@ ul {
 	margin-left: 0px;
 	padding-left: 5px;
 	list-style-type: square;
-    list-style-position: outside;
+   list-style-position: outside;
 	position: relative; 
 	left: 0px;
 	}

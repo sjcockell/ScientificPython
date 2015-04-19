@@ -11,36 +11,40 @@
 by <a href="http://www.staff.ncl.ac.uk/conor.lawless/">Conor Lawless</a> email: <a href="mailto:conor.lawless@ncl.ac.uk">conor.lawless@ncl.ac.uk</a>
 <hr></hr>
 
-<h2>Your first <a href="http://python.org">Python</a> script</h2>
+<h2>Writing your first <a href="http://python.org">Python</a> script</h2>
 
-<p>
-It's traditional, when learning a programming language, to use it to make your computer print "Hello World!".  In achieving this you have to be able to write something which the interpreter can understand, that is something written in syntactically correct Python.  You have to understand the format of a Python script, and how to execute one.  So, to complete this simple task, we have to overcome a few hurdles.
-</p>
+<p>A tradition, when learning a new programming language, is to use it to make your computer print <code>"Hello World!"</code> to screen.  To achieve this, you need to overcome two hurdles: a) write a simple command in a way that the Python interpreter can understand (command with correct Python syntax) and b) execute the command.</p>
 
 <h3>Script format</h3>
-<p>
-A Python script is a text file with a .py extension.  An easy way to create a script is to open a text editor (e.g. Notepad on Windows), write some Python text, save the file as "myscript.py", for example.  Note that although this file is a text file, the extension must be ".py" to signify that the file's contents are written in the Python language.  Also note that, using Notepad on Windows, it is necessary to include inverted commas around the filename, otherwise it will attempt to save the file with a .txt extension.  Similarly, on Windows, depending on your settings, you might not even be able to see file extensions properly.  To adjust this behaviour, you can follow <a href="http://windows.microsoft.com/en-gb/windows-vista/show-or-hide-file-name-extensions">these</a> instructions.
-</p>
+<p>It's important to note that a Python script or progam is simply a text file with a .py extension.  An easy way to create a script is to open a text editor (e.g. Notepad on Windows), write some Python commands, save the file as "myscript.py", for example.  Note that although this file is a text file, the extension must be ".py" to signify that the file's contents are written in the Python language.<p>
 
-<p>Let's try that now, by copying the two coloured lines of text below into an empty text file, saving the file as "myscript.py".</p>
+<h4>Creating and saving Python scripts under MS Windows</h4>
+<p>I strongly recommend downloading and using the free <a href="http://notepad-plus-plus.org/">Notepad++</a> text editor for use instead of Notepad on Windows machines.  Remember that you will need administrator rights to install software.</p>
+
+<p>Be aware that default Windows settings hide the extensions of files, making it difficult to verify that you have set extensions correctly.  However, highlighting a file and pressing the F2 button (to allow renaming a file) should always reveal the full filename, including extensions.  I recommend <a href="http://www.howtohaven.com/system/show-file-extensions-in-windows-explorer.shtml">forcing Windows</a> to always display extensions, if you can.</p>
+
+<p>Unless you specify otherwise, Microsoft text editors like Notepad will assume ".txt" as a default extension.  Some versions of Windows will append ".txt" to your filename even if you manually specify an extension (e.g. "myscript.py" becomes "myscript.py.txt")!  To force the correct behaviour, in Notepad's "Save As..." dialogue box you can include inverted commas around the filename and extension, or choose "*.*" from the dropdown menu for file type.</p>
+
+<h3>An example script</h3>
+<p>Let's create a Python script by copying the two coloured lines of text below into an empty text file, saving the file as "myscript.py".</p>
 
 <div class="cbox">
 <pre><font face="Lucida,Courier New"><font color="#008000"># First script!
 </font><font color="#C00000">print</font><font color="#0000C0">(</font><font color="#004080">"Hello World!"</font><font color="#0000C0">)</font><font color="#000000"></font></font></pre>
 </div>
 
-<p> There are several different ways to run this script, depending on what's most convenient, and we will learn about some of these on the next page.</p>
+<p> There are several different ways to run this script, depending on what's most convenient and what's available on your machine.  We will learn about some of these on the next page.</p>
 
-<p> Before we do that, let's look at an alternative text editor, the one which comes with the IDLE Python interpreter.</p>
+<p> Before we do that, let's look at an alternative text editor, specifically designed for writing and examining Python code: the one which comes with the IDLE Python interpreter.</p>
 
-<p>On your own, Windows based machine you can start the IDLE Python interpreter as follows:</p>
+<p>On your own Windows machine, you can start the IDLE Python interpreter as follows:</p>
 <p><b>Start -> All Programs -> Python 2.7 -> IDLE (Python GUI)</b></p>
-<p>Newcastle's IT department have installed Python in an unusual location on machines in the Dene cluster, so if you are using one of those machines:</p>
+<p>However, Newcastle's IT department have installed Python in a very unusual location on machines in the Dene cluster, so if you are using one of those machines:</p>
 <p><b>Start -> All Programs -> ARCGIS -> Python 2.7 -> IDLE (Python GUI)</b></p>
 
-<p>This opens a live console (or shell) for executing Python commands.  IDLE also provides a text editor, specifically designed to help with understanding and running code.  With the Python shell open, go File -> New Window to start writing a new script.  If you copy and paste the text above into this Untitled window, and save the file as "myscript.py" you will see that text automatically becomes coloured.  The IDLE text editor colours text depending on whether a piece of text contains comments, strings etc. and later we will see that it helps with tasks like indenting text and ensuring sets of brackets are closed.</p>
+<p>The IDLE Python interface provides a live console (or shell) for executing Python commands.  It also includes a useful text editor, specifically designed to help with writing, understanding and running Python code.  From the menu above the IDLE console, choose File -> New Window to start writing a new script.  If you copy and paste the text above into this Untitled window, <b>and</b> save the file as "myscript.py" you will see that the editor automatically colours the text.  The IDLE text editor colours text depending on whether it contains comments, strings etc. and later we will see that it helps with tasks like indenting text and ensuring sets of brackets are closed.</p>
 
-<p> Save this script before we execute it.  <b>File -> Save As -> myscript.py</b> </p>
+<p>Save this script before we execute it.  <b>File -> Save As -> myscript.py</b> </p>
 
 <hr></hr>
 
@@ -63,6 +67,6 @@ A Python script is a text file with a .py extension.  An easy way to create a sc
 <a href="http://www.flickr.com/photos/conchur/2320278987/"><IMG SRC="http://farm4.static.flickr.com/3245/2320278987_cb105a357e_t.jpg" /></a>
 </p>
 
-<h5>Last updated: April 2013</h5>
+<h5>Last updated: April 2015</h5>
 </body>
 </html>

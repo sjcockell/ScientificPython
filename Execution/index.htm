@@ -19,28 +19,59 @@ by <a href="http://www.staff.ncl.ac.uk/conor.lawless/">Conor Lawless</a> email: 
 <p> Now that we have a script written (myscript.py), the next question is how to make it run?  There are many ways to do this:</p>
 
 <ol>
-<li>Run from within the IDLE GUI (useful for debugging code)</li>
-<li>Double-click on the script icon in Windows (fast way to execute a script)</li>
-<li>Run from the command-line (useful for preserving messages from Python, or executing scripts on servers or on other operating systems)</li>
+<li>Run code from within the IDLE GUI (useful for debugging code)</li>
+<li>Double-click on the script icon in Windows (fast & easy way to execute a script)</li>
+<li>Run code from the command-line (useful for preserving messages from Python, or executing scripts remotely or on other operating systems)</li>
 </ol>
 
-<p>To run a script from within the IDLE GUI: if the script is not open, then right-click on the myscript.py icon, and choose "Edit with IDLE".  Once the script is opened in the IDLE text editor, to run it, just go <b>Run -> Run Module</b> (or as a shortcut, you can press F5 instead).  If the script has been modified since it was last saved, IDLE will prompt you to save the script before running it.  This is good practise in case IDLE crashes while trying to run the script.</p>
 
-<p>Hopefully you will see that Python has printed out "Hello World!" to screen as you have told it, and is waiting for further instructions.  You could just type the following into the shell to achieve the same effect: </p>
+<h4>1. Run code from within the IDLE GUI</h4>
+<p>To run a script from within the IDLE GUI: if the script is not open, then right-click on the myscript.py icon, and choose "Edit with IDLE".  Once the script is opened in the IDLE text editor, to run it, just go <b>Run -> Run Module</b> (or as a shortcut, you can press F5 instead).  If the script has been modified since it was last saved, IDLE will prompt you to save the script before running it.  This is good practise.  If Python crashes while trying to run the script, you won't lose your work.</p>
+
+<p>Hopefully you will see that Python has printed out "Hello World!" to screen as you have told it, and is waiting for further instructions.  For this very simple command, you could just type the following into the shell to achieve the same effect: </p>
 
 <div class="cbox">
 <font color="#C00000">print</font><font color="#0000C0">(</font><font color="#004080">"Hello World!"</font><font color="#0000C0">)</font><font color="#000000"></font></font></pre>
 </div>
 
-<p>Typing short commands into the shell directly is useful for trying things out, and we'll do some more of that later.</p>
+<p>Typing short commands into the shell directly, executing code line-by-line is useful for trying things out, and we'll do some more of that later.</p>
 
-<p>The second method above is self-explanatory.  If Python is installed correctly under windows, double clicking on a .py file will execute the script.  However, for this trivial example, Python will open a terminal window, print the message the the window and close the window immediately.  This will likely happen so fast that you will not have a chance to read the message!  Nevertheless, this can be a very useful method to execute more complicated scripts that take longer to run, or whose output results in a file on your hard drive for example.</p>
+<h4>2. Double-click on the script icon</h4>
+<p>If Python is installed correctly under Windows, double clicking on a .py file will execute the script.  However, for this trivial example, Python will open a terminal window, print the message the the window and close the window immediately.  This will likely happen so fast that you will not have a chance to read the message!  Nevertheless, this can be a very useful method to execute more complicated scripts that take longer to run, or whose output can be verified without inspecting the console: the creation of a new file on your hard drive, for example.</p>
 
-<p>The third method, running from the command-line, is useful for doing computation remotely on another computer, or for automating the simultaneous execution of several scripts on your own computer.  It requires that the Python executable is in your <a href="http://www.anthonydebarros.com/2011/10/15/setting-up-python-in-windows-7/">PATH</a>.  This is a little tricky to set up under Windows, particularly on Newcastle university desktop machines so I won't go into it today.</p>
+<h4>3. Run code from the command-line</h4>
+<p>Running code from the command-line is useful for doing computation remotely on another computer, or for automating the simultaneous execution of several scripts on your own computer.  In fact, if you are familiar with using the command-line, it is often a quicker way to interact with computers in general.  To run Python code conveniently, the Python executable should be in your PATH (a list of directories on your computer where useful, commonly used programs can be found).  Your PATH should already be set up correctly on Linux and OSX.</p>
+
+<h5>Setting up your PATH under Windows</h5>
+<p>Note that you will need administrator rights on your machine to edit the PATH variable.  Unfortunately, this is not the case on Newcastle university desktop machines.  
+<ul>
+<li>Click on the <b>Start</b> button, and then right-click on <b>Computer</b></li>
+<li>Select <b>Properties->Advanced System Settings->Environment Variables</b></li>
+<li>In the <b>User Variables</b> section, <b>Edit...</b> the PATH variable and add the following text: <code>C:\Python27;C:\Python27\Lib\site-packages\;C:\Python27\Scripts\;</code></li>
+<li>Note that the edits above assume Python 2.7 installed in the default location: <code>C:\Python27</code></li>
+<ul>
+
+<p>You should now be able to open a terminal or console (e.g. for Windows <b>Start->All Programs->Accessories->Command Prompt</b>) and enter the command <code>python</code> at the prompt (e.g. for Windows <code>C:\> python</code>).  Entering the <code>python</code> command in your terminal will load a stripped-down version of the Python interpreter we've seen already, which should look something like this:</p>
+<pre>
+Python 2.7.9  (default, Apr 10 2015, 14:24) [MSC v.1500 32 bit (Intel)] on win32
+Type "help", "copyright", "credits" or license for more information.
+>>>
+</pre>
+<p>As before, you can enter Python commands line-by-line.  You can exit the interpreter by entering <code>quit()</code>.
+
+<p>To be able to execute a script from the command line, the script should be found in the current working directory of your terminal or console.  In Windows, the easiest way to do this is to open a command prompt in the directory you've already saved the "myscript.py" file.  There are several ways to do this, but probably the easiest is <a href="http://stackoverflow.com/a/60914/2015542">described here</a>:  right-click on a directory while holding down the Shift key, before choosing "Open command window here".  Alternatively, you can <a href="http://coweb.cc.gatech.edu/ice-gt/339">navigate</a> to a new location from any terminal window.</p>
+
+<p>Provided that the "myscript.py" file is located in the current working directory, you can enter the following command in your terminal to execute all of the commands written in "myscript.py":</p>
+
+<code>python myscript.py</code>
+
+<p>Similarly, you can also execute the script by entering the following from within the Python interpreter:</p>
+
+<pre>>>>import myscript</pre>
 
 <h3>Some more complicated, flashy demo code</h3>
 
-<p>Ok, so now you know two different ways to execute a Python script in Windows, save the script below and try to use both methods to execute it, and see what happens.  This code might seem incomprehensible.  It is quite complicated and difficult, but I hope that you'll be surprised at the complexity of the result given how short the text is.  Most of the lines in this script are a bit obscure and are simply there to get the window popup working.  We won't go into that specifically in this course, but I hope that by the end of the day you will be able to recognise several important features of this script and feel confident making a few tweaks to it here and there to see what happens.  A version with some explanatory comments can be seen <a href="../Resources/Colours.html">here</a></p>
+<p>OK, so now you know a few different ways to execute a Python script, save the script below (don't forget the ".py" extension) and try to use both methods to execute it, and see what happens.  This code might seem incomprehensible.  It is quite complicated and difficult, but I hope that you'll be surprised at the complexity of the result given how short the text is.  Most of the lines in this script are a bit obscure and are simply there to get the window popup working.  We won't go into that specifically in this course, but I hope that by the end of the day you will be able to recognise several important features of this script and feel confident making a few tweaks to it here and there to see what happens.  A version with some explanatory comments can be found <a href="../Resources/Colours.html">here</a></p>
 
 <div class="cbox">
 <pre><font face="Lucida,Courier New"><font color="#C00000">import</font> <font color="#000000">Tkinter</font><font color="#0000C0">,</font> <font color="#000000">random</font>
@@ -65,7 +96,7 @@ by <a href="http://www.staff.ncl.ac.uk/conor.lawless/">Conor Lawless</a> email: 
 <font color="#000000">window</font><font color="#0000C0">.</font><font color="#000000">destroy</font><font color="#0000C0">(</font><font color="#0000C0">)</font><font color="#000000"></font></font></pre>
 </div>
 
-<p>If your (Windows) computer has the ability to play sound, you could try the simpler but equally awesome example below.  A version with explanatory comments can be seen <a href="../Resources/Beep.html">here</a>.</p>
+<p>If your (Windows) computer has the ability to play sound, you could try the simpler but equally awesome example below.  A version with explanatory comments can be found <a href="../Resources/Beep.html">here</a>.</p>
 
 <div class="cbox">
 <pre><font face="Lucida,Courier New"><font color="#C00000">import</font> <font color="#000000">winsound</font>
