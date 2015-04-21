@@ -1,60 +1,68 @@
-import random, numpy
+import random, numpy, string
 
-target="Conor"
-NLetters=15
+target="Tree"
+NRows,NCols=20,20
 printsol=True
 
 # Format target and convert it to a list of uppercase letters
 target=target.replace(" ","")
 target=target.upper()
-listarr=list(set(list(target)))
-#listarr=list('ABCDEFGHIJKLMNOPQRSTUVWXYZ')
 
-# Generate and fill a two-dimensional array for storing the wordsearch
-store=numpy.zeros((NLetters,NLetters),numpy.string0)
-for y in xrange(NLetters):
-    store[y,:]=[random.sample(listarr,1)[0] for i in xrange(NLetters)]
+# Define alphabet as set of letters in target
+listarr=list(set(target))
 
-pos=0 # Number of positive (or forward) solutions
-neg=0 # Number of negative (or backward) solutions
-
-# Check if there are any horizontal solutions
-xsol=[' ']*NLetters
-for x in xrange(NLetters):
-    bigword="".join(store[:,x])
-    psol=bigword.count(target) # Positive (or forward) solution
-    nsol=bigword.count(target[::-1]) # Negative (or backward) solution
-    if psol>0:
-        xsol[x]="+"
-    if nsol>0:
-        xsol[x]="-"
-    if psol>0 and nsol>0:
-        xsol[x]="*"
-    pos+=psol
-    neg+=nsol
+# Generate and fill a two-dimensional array of letters randomly selected
+store=numpy.random.choice(listarr,size=(NRows,NCols),replace=True)
 
 # Check if there are any vertical solutions
-ysol=[' ']*NLetters
-for y in xrange(NLetters):
+vpos=[0]*NCols; vneg=[0]*NCols
+for x in xrange(NCols):
+    bigword="".join(store[:,x])
+    vpos[x]=bigword.count(target) # Positive (or forward) solution
+    vneg[x]=bigword.count(target[::-1]) # Negative (or backward) solution
+
+# Check if there are any horizontal solutions
+hpos=[0]*NRows; hneg=[0]*NRows
+for y in xrange(NRows):
     bigword="".join(store[y,:])
-    psol=bigword.count(target) # Positive (or forward) solution
-    nsol=bigword.count(target[::-1]) # Negative (or backward) solution
-    if psol>0:
-        ysol[y]="+"
-    if nsol>0:
-        ysol[y]="-"
-    if psol>0 and nsol>0:
-        ysol[y]="*" 
-    pos+=psol
-    neg+=nsol
+    hpos[y]=bigword.count(target) # Positive (or forward) solution
+    hneg[y]=bigword.count(target[::-1]) # Negative (or backward) solution
+
+# Print report about types of solutions found
+HorizPos=sum(hpos)
+HorizNeg=sum(hneg)
+VertPos=sum(vpos)
+VertNeg=sum(vneg)
+print("Horizontal, forward solutions: "+str(HorizPos))
+print("Horizontal, backward solutions: "+str(HorizNeg))
+print("Vertical, forward solutions: "+str(VertPos))
+print("Vertical, backward solutions: "+str(VertNeg))
+
+def listReport(pos,neg):
+    '''Generates a list reporting whether positive or negative values or both are present at each location in pos and neg'''
+    N=len(pos)
+    sol=[' ']*N
+    for x in xrange(N):
+        if pos[x]>0:
+            sol[x]="+"
+        if neg[x]>0:
+            sol[x]="-"
+        if neg[x]>0 and pos[x]>0:
+            sol[x]="*"
+    return(sol)
     
 if printsol:
-    # Print wordsearch and indicate solutions
-    for y in xrange(NLetters):
-        output="".join(store[y,:])+ysol[y]
+    # Show wordsearch and indicate solutions
+    # Don't do this if array is large...
+    print("")
+    hsol=listReport(hpos,hneg)
+    vsol=listReport(vpos,vneg)
+    for x in xrange(NRows):
+        output="".join(store[x,:])+hsol[x]
         print(output)
-    print("".join(xsol))
-print(pos,neg)
+    print("".join(vsol))
     
+
+
 
 
