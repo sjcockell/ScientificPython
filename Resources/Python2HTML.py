@@ -108,8 +108,8 @@ class Parser:
 if __name__ == "__main__":
     import os, sys
     print "Formatting..."
-
-    flist=['RectanglesNoComments','Rectangles','Beep','BeepNoComments','Colours','ColoursNoComments','Structure','mtDNA','Wordsearch',"turtleJohn"]
+    files=os.listdir(os.getcwd())
+    flist=[os.path.basename(f).split(".")[0] for f in files if ".py" in f]
 
     for f in flist:
         print f

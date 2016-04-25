@@ -1,0 +1,25 @@
+<pre><font face="Lucida,Courier New"><font color="#C00000">import</font> <font color="#000000">turtle</font>
+<font color="#000000">john</font> <font color="#0000C0">=</font> <font color="#000000">turtle</font><font color="#0000C0">.</font><font color="#000000">Turtle</font><font color="#0000C0">(</font><font color="#0000C0">)</font>
+<font color="#000000">john</font><font color="#0000C0">.</font><font color="#000000">speed</font><font color="#0000C0">(</font><font color="#004080">"fastest"</font><font color="#0000C0">)</font>
+
+<font color="#C00000">def</font> <font color="#000000">square</font><font color="#0000C0">(</font><font color="#000000">side</font><font color="#0000C0">)</font><font color="#0000C0">:</font>
+  <font color="#C00000">for</font> <font color="#000000">i</font> <font color="#C00000">in</font> <font color="#000000">range</font><font color="#0000C0">(</font><font color="#0080C0">4</font><font color="#0000C0">)</font><font color="#0000C0">:</font>
+    <font color="#000000">john</font><font color="#0000C0">.</font><font color="#000000">forward</font><font color="#0000C0">(</font><font color="#000000">side</font><font color="#0000C0">)</font>
+    <font color="#000000">john</font><font color="#0000C0">.</font><font color="#000000">right</font><font color="#0000C0">(</font><font color="#0080C0">90</font><font color="#0000C0">)</font>
+
+<font color="#C00000">def</font> <font color="#000000">squircle</font><font color="#0000C0">(</font><font color="#000000">side</font><font color="#0000C0">,</font><font color="#000000">num</font><font color="#0000C0">)</font><font color="#0000C0">:</font>
+  <font color="#C00000">for</font> <font color="#000000">i</font> <font color="#C00000">in</font> <font color="#000000">range</font><font color="#0000C0">(</font><font color="#000000">num</font><font color="#0000C0">)</font><font color="#0000C0">:</font>
+    <font color="#000000">square</font><font color="#0000C0">(</font><font color="#000000">side</font><font color="#0000C0">)</font>
+    <font color="#000000">john</font><font color="#0000C0">.</font><font color="#000000">right</font><font color="#0000C0">(</font><font color="#0080C0">360.0</font><font color="#0000C0">/</font><font color="#000000">num</font><font color="#0000C0">)</font>
+
+<font color="#C00000">def</font> <font color="#000000">squircles</font><font color="#0000C0">(</font><font color="#000000">side</font><font color="#0000C0">,</font><font color="#000000">num</font><font color="#0000C0">,</font><font color="#000000">bigRadius</font><font color="#0000C0">,</font><font color="#000000">numSquircles</font><font color="#0000C0">)</font><font color="#0000C0">:</font>
+  <font color="#C00000">for</font> <font color="#000000">i</font> <font color="#C00000">in</font> <font color="#000000">range</font><font color="#0000C0">(</font><font color="#000000">numSquircles</font><font color="#0000C0">)</font><font color="#0000C0">:</font>
+    <font color="#000000">john</font><font color="#0000C0">.</font><font color="#000000">up</font><font color="#0000C0">(</font><font color="#0000C0">)</font>
+    <font color="#000000">john</font><font color="#0000C0">.</font><font color="#000000">forward</font><font color="#0000C0">(</font><font color="#000000">bigRadius</font><font color="#0000C0">)</font>
+    <font color="#000000">john</font><font color="#0000C0">.</font><font color="#000000">down</font><font color="#0000C0">(</font><font color="#0000C0">)</font>
+    <font color="#000000">squircle</font><font color="#0000C0">(</font><font color="#000000">side</font><font color="#0000C0">,</font><font color="#000000">num</font><font color="#0000C0">)</font>
+    <font color="#000000">john</font><font color="#0000C0">.</font><font color="#000000">up</font><font color="#0000C0">(</font><font color="#0000C0">)</font>
+    <font color="#000000">john</font><font color="#0000C0">.</font><font color="#000000">backward</font><font color="#0000C0">(</font><font color="#000000">bigRadius</font><font color="#0000C0">)</font>
+    <font color="#000000">john</font><font color="#0000C0">.</font><font color="#000000">right</font><font color="#0000C0">(</font><font color="#000000">float</font><font color="#0000C0">(</font><font color="#0080C0">360</font><font color="#0000C0">)</font><font color="#0000C0">/</font><font color="#000000">numSquircles</font><font color="#0000C0">)</font>
+
+<font color="#000000">squircles</font><font color="#0000C0">(</font><font color="#000000">side</font><font color="#0000C0">=</font><font color="#0080C0">75</font><font color="#0000C0">,</font><font color="#000000">num</font><font color="#0000C0">=</font><font color="#0080C0">17</font><font color="#0000C0">,</font><font color="#000000">bigRadius</font><font color="#0000C0">=</font><font color="#0080C0">275</font><font color="#0000C0">,</font><font color="#000000">numSquircles</font><font color="#0000C0">=</font><font color="#0080C0">5</font><font color="#0000C0">)</font><font color="#000000"></font></font></pre>

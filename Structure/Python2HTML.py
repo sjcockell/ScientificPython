@@ -1,4 +1,3 @@
-## {{{ http://code.activestate.com/recipes/52298/ (r3)
 """
     MoinMoin - Python Source Parser
 """
@@ -10,6 +9,7 @@ import keyword, token, tokenize
 
 #############################################################################
 ### Python Source Parser (does Hilighting)
+### http://aspn.activestate.com/ASPN/Cookbook/Python/Recipe/52298
 #############################################################################
 
 _KEYWORD = token.NT_OFFSET + 1
@@ -108,16 +108,16 @@ class Parser:
 if __name__ == "__main__":
     import os, sys
     print "Formatting..."
+    files=os.listdir(os.getcwd())
+    flist=[os.path.basename(f).split(".")[0] for f in files if ".py" in f]
 
-    # open own source
-    source = open('demo.py').read()
+    for f in flist:
+        print f
+        # open own source
+        source = open(f+'.py').read()
 
-    # write colorized version to "python.html"
-    Parser(source, open('demo.html', 'wt')).format(None, None)
+        # write colorized version to "python.html"
+        Parser(source, open(f+'.html', 'wt')).format(None, None)
 
-    # load HTML page into browser
-    if os.name == "nt":
-        os.system("explorer demo.html")
-    else:
-        os.system("netscape demo.html &")
-## end of http://code.activestate.com/recipes/52298/ }}}
+
+

@@ -1,0 +1,54 @@
+<pre><font face="Lucida,Courier New"><font color="#008000">######</font>
+<font color="#004080">"""A small ascii-art program in Python.
+
+Danny Yoo (dyoo@hkn.eecs.berkeley.edu)
+
+See:
+
+    http://www.wolframscience.com/preview/nks_pages/?NKS0032.gif
+
+and Wolfram's "A New Kind of Science" for more information about this
+fascinating topic.
+
+"""</font>
+
+<font color="#C00000">import</font> <font color="#000000">sys</font>
+
+
+<font color="#004080">"""Wolfram's automaton uses eight rules for generating the next row of
+output.  Let's take a look at them."""</font>
+<font color="#000000">RULE_100</font> <font color="#0000C0">=</font> <font color="#0000C0">{</font> <font color="#0000C0">(</font><font color="#0080C0">1</font><font color="#0000C0">,</font> <font color="#0080C0">1</font><font color="#0000C0">,</font> <font color="#0080C0">1</font><font color="#0000C0">)</font> <font color="#0000C0">:</font> <font color="#0080C0">0</font><font color="#0000C0">,</font>
+             <font color="#0000C0">(</font><font color="#0080C0">1</font><font color="#0000C0">,</font> <font color="#0080C0">1</font><font color="#0000C0">,</font> <font color="#0080C0">0</font><font color="#0000C0">)</font> <font color="#0000C0">:</font> <font color="#0080C0">1</font><font color="#0000C0">,</font>
+             <font color="#0000C0">(</font><font color="#0080C0">1</font><font color="#0000C0">,</font> <font color="#0080C0">0</font><font color="#0000C0">,</font> <font color="#0080C0">1</font><font color="#0000C0">)</font> <font color="#0000C0">:</font> <font color="#0080C0">1</font><font color="#0000C0">,</font>
+             <font color="#0000C0">(</font><font color="#0080C0">1</font><font color="#0000C0">,</font> <font color="#0080C0">0</font><font color="#0000C0">,</font> <font color="#0080C0">0</font><font color="#0000C0">)</font> <font color="#0000C0">:</font> <font color="#0080C0">0</font><font color="#0000C0">,</font>
+             <font color="#0000C0">(</font><font color="#0080C0">0</font><font color="#0000C0">,</font> <font color="#0080C0">1</font><font color="#0000C0">,</font> <font color="#0080C0">1</font><font color="#0000C0">)</font> <font color="#0000C0">:</font> <font color="#0080C0">1</font><font color="#0000C0">,</font>
+             <font color="#0000C0">(</font><font color="#0080C0">0</font><font color="#0000C0">,</font> <font color="#0080C0">1</font><font color="#0000C0">,</font> <font color="#0080C0">0</font><font color="#0000C0">)</font> <font color="#0000C0">:</font> <font color="#0080C0">1</font><font color="#0000C0">,</font>
+             <font color="#0000C0">(</font><font color="#0080C0">0</font><font color="#0000C0">,</font> <font color="#0080C0">0</font><font color="#0000C0">,</font> <font color="#0080C0">1</font><font color="#0000C0">)</font> <font color="#0000C0">:</font> <font color="#0080C0">1</font><font color="#0000C0">,</font>
+             <font color="#0000C0">(</font><font color="#0080C0">0</font><font color="#0000C0">,</font> <font color="#0080C0">0</font><font color="#0000C0">,</font> <font color="#0080C0">0</font><font color="#0000C0">)</font> <font color="#0000C0">:</font> <font color="#0080C0">0</font> <font color="#0000C0">}</font>
+
+
+<font color="#C00000">def</font> <font color="#000000">drawRow</font><font color="#0000C0">(</font><font color="#000000">row</font><font color="#0000C0">)</font><font color="#0000C0">:</font>
+    <font color="#C00000">for</font> <font color="#000000">character</font> <font color="#C00000">in</font> <font color="#000000">row</font><font color="#0000C0">:</font>
+        <font color="#C00000">if</font> <font color="#000000">character</font><font color="#0000C0">:</font> <font color="#000000">sys</font><font color="#0000C0">.</font><font color="#000000">stdout</font><font color="#0000C0">.</font><font color="#000000">write</font><font color="#0000C0">(</font><font color="#004080">'O'</font><font color="#0000C0">)</font>
+        <font color="#C00000">else</font><font color="#0000C0">:</font> <font color="#000000">sys</font><font color="#0000C0">.</font><font color="#000000">stdout</font><font color="#0000C0">.</font><font color="#000000">write</font><font color="#0000C0">(</font><font color="#004080">'.'</font><font color="#0000C0">)</font>
+    <font color="#000000">sys</font><font color="#0000C0">.</font><font color="#000000">stdout</font><font color="#0000C0">.</font><font color="#000000">write</font><font color="#0000C0">(</font><font color="#004080">'\n'</font><font color="#0000C0">)</font>
+
+
+<font color="#000000">STARTING_ROW</font> <font color="#0000C0">=</font> <font color="#0000C0">[</font><font color="#0080C0">0</font><font color="#0000C0">]</font><font color="#0000C0">*</font><font color="#0080C0">2</font> <font color="#0000C0">+</font> <font color="#0000C0">[</font><font color="#0080C0">0</font><font color="#0000C0">]</font><font color="#0000C0">*</font><font color="#0080C0">70</font> <font color="#0000C0">+</font> <font color="#0000C0">[</font><font color="#0080C0">1</font><font color="#0000C0">]</font> <font color="#0000C0">+</font> <font color="#0000C0">[</font><font color="#0080C0">0</font><font color="#0000C0">]</font><font color="#0000C0">*</font><font color="#0080C0">2</font>
+
+<font color="#C00000">def</font> <font color="#000000">applyRuleOnRow</font><font color="#0000C0">(</font><font color="#000000">rule</font><font color="#0000C0">,</font> <font color="#000000">row</font><font color="#0000C0">)</font><font color="#0000C0">:</font>
+    <font color="#000000">new_row</font> <font color="#0000C0">=</font> <font color="#0000C0">[</font><font color="#0080C0">0</font><font color="#0000C0">]</font>
+    <font color="#C00000">for</font> <font color="#000000">i</font> <font color="#C00000">in</font> <font color="#000000">range</font><font color="#0000C0">(</font><font color="#0080C0">1</font><font color="#0000C0">,</font> <font color="#000000">len</font><font color="#0000C0">(</font><font color="#000000">row</font><font color="#0000C0">)</font><font color="#0000C0">-</font><font color="#0080C0">1</font><font color="#0000C0">)</font><font color="#0000C0">:</font>
+        <font color="#000000">triple</font> <font color="#0000C0">=</font> <font color="#0000C0">(</font><font color="#000000">row</font><font color="#0000C0">[</font><font color="#000000">i</font><font color="#0000C0">-</font><font color="#0080C0">1</font><font color="#0000C0">]</font><font color="#0000C0">,</font> <font color="#000000">row</font><font color="#0000C0">[</font><font color="#000000">i</font><font color="#0000C0">]</font><font color="#0000C0">,</font> <font color="#000000">row</font><font color="#0000C0">[</font><font color="#000000">i</font><font color="#0000C0">+</font><font color="#0080C0">1</font><font color="#0000C0">]</font><font color="#0000C0">)</font>
+        <font color="#000000">new_row</font><font color="#0000C0">.</font><font color="#000000">append</font><font color="#0000C0">(</font><font color="#000000">rule</font><font color="#0000C0">[</font><font color="#000000">triple</font><font color="#0000C0">]</font><font color="#0000C0">)</font>
+    <font color="#000000">new_row</font><font color="#0000C0">.</font><font color="#000000">append</font><font color="#0000C0">(</font><font color="#0080C0">0</font><font color="#0000C0">)</font>
+    <font color="#C00000">return</font> <font color="#000000">new_row</font>
+
+
+<font color="#C00000">if</font> <font color="#000000">__name__</font> <font color="#0000C0">==</font> <font color="#004080">'__main__'</font><font color="#0000C0">:</font>
+    <font color="#000000">row</font> <font color="#0000C0">=</font> <font color="#000000">STARTING_ROW</font>
+    <font color="#C00000">for</font> <font color="#000000">i</font> <font color="#C00000">in</font> <font color="#000000">range</font><font color="#0000C0">(</font><font color="#0080C0">200</font><font color="#0000C0">)</font><font color="#0000C0">:</font>
+        <font color="#000000">drawRow</font><font color="#0000C0">(</font><font color="#000000">row</font><font color="#0000C0">)</font>
+        <font color="#000000">row</font> <font color="#0000C0">=</font> <font color="#000000">applyRuleOnRow</font><font color="#0000C0">(</font><font color="#000000">RULE_100</font><font color="#0000C0">,</font> <font color="#000000">row</font><font color="#0000C0">)</font>
+<font color="#008000">######</font>
+<font color="#000000"></font></font></pre>
