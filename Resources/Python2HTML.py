@@ -109,7 +109,7 @@ if __name__ == "__main__":
     import os, sys
     print "Formatting..."
 
-    flist=['RectanglesNoComments','Rectangles','Beep','BeepNoComments','Colours','ColoursNoComments','Structure','mtDNA','Wordsearch']
+    flist=['RectanglesNoComments','Rectangles','Beep','BeepNoComments','Colours','ColoursNoComments','Structure','mtDNA','Wordsearch',"turtleJohn"]
 
     for f in flist:
         print f
